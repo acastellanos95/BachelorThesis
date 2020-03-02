@@ -1,10 +1,17 @@
 \chapter{Resultados}
 Texto
-\begin{figure}[!h]
-\centering
-\includegraphics[width=.2\textwidth,keepaspectratio=true]{escudo-2}
-\end{figure}
 
-mas texto Loren itsu
-\[ \vec E = \vec \nabla \cdot \vec \nabla \vec r \times \vec A
-\]
+\section{Sistema simulado}
+
+Los sistemas se simularon a las temperaturas de: 280 K, 298.15 K, 310 K, 320 K, 330 K, 340 K, 350 K, 360 K y 370 K; y con las siguientes caracteristicas:
+
+\begin{itemize}
+    \item Número de moléculas: 16807 moléculas de agua, 10 moléculas de ácido 2,4-diclorofenoxiacético (2,4-D) y un nanotubo de carbono (6, 5) con 364 átomos.
+    \item Integrador de todos los sistemas: salto de rana para las ecuaciones de movimiento de Newton.
+    \item Paso de tiempo: 0.002 ps, número de pasos: 10000000, Intervalo de tiempo: 20 ns.
+    \item radio de corte para la lista de vecinos de corto alcance: 1.2 nm, radio de corte para interacción de coulomb: 1.2 nm, radio de corte para interacción LJ 12-6: 1.2 nm.
+    \item Corrección de dispersión de largo alcance para energía y presión.
+    \item Acoplamiento de temperatura: ensamble extendido de nose-hoover con $\tau_t$: 0.4 ps y con las temperaturas antes mencionadas.
+    \item Acoplamiento de presión: ensamble extendido de parrinello-rahman con $\tau_p$: 1.6 ps a presión: 1 bar.
+    \item Algoritmo de constricción: LINCS(LINear Constraint Solver).
+\end{itemize}

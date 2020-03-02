@@ -18,12 +18,14 @@
 \usepackage[T1]{fontenc}		   %%% fonts y unicode UTF8
 \usepackage[utf8]{inputenc}        
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
+
+
 % Cualquier paquete necesario debe ser incluido aquí.
 % Paquetes ya cargados por default en fcfmtesis:
 % babel, latexsym, fancyhdr, graphicx y array
 
 \author{André Fabián Castellanos Aldama}                  % Nombre del autor
-\title{Simulación de Sistema CNT, agua y ácido 2,4-diclorofenoxiacético}         % Título de la tesis
+\title{Dinámica molecular de nanotubos en agua}         % Título de la tesis
 \asesor{Minerva González Melchor}               % Nombre del asesor
 \presidente{Horoscopista Fernando} % Nombre del presidente del jurado
 \secretario{Homeópata Pérez}       % Nombre del secretario del jurado
@@ -51,15 +53,15 @@
            							% maketitle, (segunda portada)	
           							% El valor 4 puede cambiarse según corresponda.
            \tableofcontents %----quitar comentario en la versión final
+           \listoffigures
+           \listoftables
 \include{agradecimientos}
-\include{resumen}
 \include{introduccion}
 \mainmatter  % A partir de aquí va el trabajo propio, se hará colocando
              % comandos \include{archivo} donde archivo es el nombre de 
              % un archivo de latex con nombre "archivo.tex"
              % Notar que en sistemas Unix las mayúsculas son diferentes
              % a las minúsculas.
-
 \include{marcoteorico}
 \include{metodologia}
 \include{resultados}
@@ -70,7 +72,7 @@
 
 \backmatter  % En esta línea está terminado el trabajo. No quitar
 \addcontentsline{toc}{chapter}{Bibliografía} % Agregar Bibliografía al índice
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 \bibliography{tesis}      % Para utilizar con BibTeX y con un archivo tesis.bib
 %\begin{thebibliography}{XX} % Por si alguien no quiere utilizar BibTeX
 %\end{thebibliography}

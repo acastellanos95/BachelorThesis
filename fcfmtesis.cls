@@ -72,7 +72,7 @@
  \DeclareOption*{\ClassWarning{fcfmtesis}{Opción desconocida: \CurrentOption}}
  \ProcessOptions\relax
  
- \LoadClass[letterpaper,10pt,twoside,titlepage,openright,onecolumn,final]{book}
+ \LoadClass[letterpaper,11pt,twoside,titlepage,openright,onecolumn,final]{book}
  
  \RequirePackage[spanish, es-tabla]{babel}
  \RequirePackage{latexsym}
