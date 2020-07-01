@@ -1,20 +1,23 @@
 %---------TODO----------
-% Crear una figura mejor
-% nanotubos de carbono, dinámica molecular ademas (ensamble nose-hoover y parrinello-rahman), LINCS
-\chapter{Mecánica Estadística de Equilibrio}
+% 
+%
+\chapter{Mecánica estadística de equilibrio}
 \section{Fundamentos teóricos}
-La mecánica estadística estudia propiedades de los sistemas macroscópicos termodinámicos a partir de sus propiedades microscópicas. Una cantidades macroscópica de estado (ó macroestado $(U,V,N)$) en un sistema, es el promedio de propiedades microscópicas. Un estado microscópico del sistema es un punto en el espacio fase $(q,p)$ correspondiente al macroestado $(U,V,N)$ este se conoce como microestado y el total de microestados asociados a un macroestado se denota por $\Omega(U,V,N)$.\\
+La mecánica estadística estudia propiedades de los sistemas macroscópicos termodinámicos a partir de sus propiedades microscópicas. \textcolor{red}{Suponemos un sistema aislado caracterizado por las variables termodinámicas energía $U$, volumen $V$ y número de partículas $N$}. Una cantidad macroscópica de estado (ó {\it macroestado} $(U,V,N)$) en el sistema es el promedio de propiedades microscópicas. Por otro lado, un estado microscópico del sistema, \textcolor{red}{definido por coordenadas $q$ y momentos $p$,} es un punto en el espacio fase $(q,p)$ correspondiente al macroestado $(U,V,N)$ y se denomina {\it microestado}, y el total de microestados asociados a un macroestado se denota por $\Omega(U,V,N)$.\\
 
-Sin embargo, resolver la dinámica del sistema por cualquiera de los métodos en dinámica (Newton, Lagrange o Hamilton) seria un cálculo imposible y largo. Dos postulados fundamentales de la física estadística crean dicha conexión entre ambas escalas \cite{tuckerman2010}: \\
+\textcolor{blue}{De acuerdo a la mecánica clásica, la dinámica de un sistema de partículas se puede resolver solucionando las ecuaciones de movimiento de las partículas.}
+Sin embargo, \textcolor{blue}{cuando las partículas interactúan entre sí, resolver la dinámica del sistema por cualquiera de los métodos en dinámica (Newton, Lagrange o Hamilton) sería un cálculo básicamente imposible o poco práctico. A pesar de ello el marco conceptual es extremadamente útil y por ello describiremos enseguida los postulados de la mecánica estadística de equilibrio y el concepto de ensamble.}\\
+
+Dos postulados fundamentales de la física estadística crean dicha conexión entre ambas escalas, la microscópica y macroscópica \cite{tuckerman2010}: \textcolor{green}{mencionar las escalas a las que te refieres para que la idea se entienda y el texto se pueda conectar}\\
 
 \begin{itemize}
     \item Postulado de equiprobabilidad: En un sistema aislado todos sus microestados accesibles son igualmente probables, i.e., a un macroestado de equilibrio le corresponden mayor número de microestados.\\
     
-    \item Postulado de la entropía: En un sistema en equilibrio, su entropía esta dada por:
+    \item Postulado de la entropía: En un sistema en equilibrio, su entropía \textcolor{red}{$S$} \textcolor{yellow}{esta} dada por:
     \begin{equation}
         S=Kln(\Omega)
     \end{equation}
-    con K una constante y $\Omega$ el numero de microestados correspondientes.
+    con K una constante y $\Omega$ el \textcolor{yellow}{número} de microestados correspondientes.
 \end{itemize}
 
 
@@ -22,19 +25,21 @@ Sin embargo, resolver la dinámica del sistema por cualquiera de los métodos en
 
 Un ensamble es un conjunto hipotético de $N$ replicas de un sistema que se encuentra en un macroestado dado y cada replica esta en algún microestado accesible.\\
 
-Los ensambles pueden ser definidos dependiendo de las situaciones termodinámicas que se impongan al sistema, y dependiendo de estos se pueden extraer propiedades estáticas macroscópicas como la energía, temperatura, presión, etc. Los ensambles que cumplen esta propiedad estática aun cuando el sistema se encuentra evolucionando en el tiempo se les llaman: \textit{Ensambles de equilibrio}.\\
+Los ensambles pueden ser definidos dependiendo de las situaciones termodinámicas que se impongan al sistema, y dependiendo de \textcolor{yellow}{estos} se pueden extraer propiedades estáticas macroscópicas como la energía, temperatura, presión, etc. Los ensambles que cumplen esta propiedad estática aun cuando el sistema se encuentra evolucionando en el tiempo son llamados \textit{Ensambles de equilibrio}.\\
 
-En teoría clásica de ensambles todas las observables macroscópicas de un sistema están conectados a una función microscópica. Por el primer postulado, se puede calcular el promedio temporal de una variable dinámica $A$ como en la ecuacion \ref{promediotemp}, o por un promedio de ensamble asociado a su probabilidad \ref{promedioequprob} \cite{tuckerman2010}. \\
+En teoría clásica de ensambles todas las observables macroscópicas de un sistema están conectados a una función microscópica. Por el primer postulado, se puede calcular el promedio temporal de una variable dinámica $A$ como en la ecuación (\ref{promediotemp}), 
 
 \begin{equation} \label{promediotemp}
     \langle A\rangle = \lim_{t\to\infty}\frac{1}{t}\int_0^t A(t)dt
 \end{equation}\\
-
+\textcolor{green}{en el intervalo de tiempo de 0 a $t$,}
+o por un promedio de ensamble asociado a su probabilidad como en la ecuación(\ref{promedioequprob}) \cite{tuckerman2010}. \\
 \begin{equation} \label{promedioequprob}
     \langle A\rangle =\sum_r A_r P_r
 \end{equation}\\
-
 con $P_r$ la probabilidad del r-ésimo microestado y $A_r$ el valor de $A$ en el r-ésimo microestado.\\
+
+\textcolor{green}{La Tabla \ref{tiposEnsamble} resume cuatro de los ensambles de equilibrio más comúnmente usados.}
 
 \begin{table}[h!]
     \centering
@@ -54,7 +59,8 @@ con $P_r$ la probabilidad del r-ésimo microestado y $A_r$ el valor de $A$ en el
 
 \subsection{Ensamble Canónico NVT}
 
-Este ensamble esta formado por $\mathcal{N}$ copias de un sistema en equilibrio con una fuente de calor a temperatura T. Imaginemos que los $\mathcal{N}$ sistemas del ensamble están en contacto entre si mediante paredes diatérmicas, i.e., para cada sistema en este ensamble, el resto es su fuente de calor como se muestra en la figura \ref{fig:CanonicEns}.\\
+Este ensamble esta formado por $\mathcal{N}$ 
+\textcolor{green}{revisar el significado de $N$} copias de un sistema en equilibrio con N partículas, una fuente de calor a temperatura T. Imaginemos que los $\mathcal{N}$ sistemas del ensamble están en contacto entre si mediante paredes diatérmicas, i.e. para cada sistema en este ensamble, el resto es su fuente de calor como se muestra en la figura \ref{fig:CanonicEns}.\\
 
 \begin{figure}[!h]
     \centering
@@ -77,7 +83,7 @@ Tenemos:\\
 \end{center}
 
 
-Cumple:
+Cumple las dos ecuaciones siguientes:
 
 \begin{equation} \label{restrprob}
     1 = \sum_r P_r \\
@@ -94,32 +100,32 @@ Cumple:
 
 El número de formas de microestados correspondientes en que se presenta esta distribución es:\\
 
-\begin{equation}
+\begin{equation} \label{ditrbmicro}
     \Omega = \frac{\mathcal{N}!}{\prod_r N_r}
 \end{equation}\\
 
-Y por el postulado de la entropía y de acuerdo a la formula de Stirling:
+Y por el postulado de la entropía y de acuerdo a la formula de Stirling se encuentra la ecuación (\ref{entropiaboltz})
 
 \begin{equation}  \label{entropiaboltz}
     S = kln(\frac{\mathcal{N}}{\prod_r N_r}) = -K\mathcal{N}\sum_r P_rln(P_r)
 \end{equation}\\
 
-Usando el método de los multiplicadores de Lagrange se encuentra la función de partición canónica $\mathcal{Z}$:
+Usando el método de los multiplicadores de Lagrange se encuentra la siguiente ecuación \cite{greiner1995}:
 
 \begin{equation} \label{probcan}
     P_r = \frac{e^{-\beta E_r}}{\mathcal{Z}}
 \end{equation}
-\begin{equation} \label{funcpartcan}
-    \mathcal{Z} = \sum_r e^{-\beta E_r \quad con\ \beta=\frac{1}{KT}
-\end{equation}
+\begin{equation*} \label{funcpartcan}
+    \text{donde }\mathcal{Z} = \sum_r e^{-\beta E_r \quad con\ \beta=\frac{1}{KT}} \text{ es la función de partición canónica}
+\end{equation*}
 
 La entropía dentro de unos de los sistemas del ensamble es \cite{mandl1988statistical}:
 
-\begin{equation}
+\begin{equation} \label{entrnvt}
     S = k\beta U + kln(\mathcal{Z})
 \end{equation}
 
-Todas las propiedades termodinámicas se obtienen de la función de partición canónica:
+Todas las propiedades termodinámicas se obtienen de la función de partición canónica como se muestra en las ecuaciones (\ref{energcan}) (\ref{ecestacan}).
 
 \begin{equation} \label{energcan}
     U=-\frac{\partial}{\partial \beta}ln(\mathcal{Z})
@@ -129,7 +135,7 @@ Todas las propiedades termodinámicas se obtienen de la función de partición c
     PV=KTln(\mathcal{Z})
 \end{equation}
 
-El potencial termodinámico del ensamble canónico es la energía libre de Helmholtz:
+El potencial termodinámico del ensamble canónico es la energía libre de Helmholtz que es la siguiente ecuación:
 
 \begin{equation} \label{potHelm}
     F(N,V,T)=-\frac{1}{\beta}ln(\mathcal{Z})=U-TS
@@ -137,7 +143,9 @@ El potencial termodinámico del ensamble canónico es la energía libre de Helmh
 
 \subsection{Ensamble isotérmico-isobárico NPT}
 
-El ensamble NPT esta formado por $\mathcal{N}$ copias de un sistema en equilibrio con una fuente de calor a temperatura T y una fuente de Volumen. Los $\mathcal{N}$ sistemas de este ensamble estan en contacto entre si por paredes diatérmicas y flexibles.\\
+Este ensamble es importante ya que los datos experimentales de propiedades en fase condensada se encuentran a condiciones de presión y temperatura constante.\\
+
+El ensamble NPT esta formado por $\mathcal{N}$ copias de un sistema en equilibrio con N partículas, una fuente de calor a temperatura T y esta acoplado a un pistón isotrópico que se comprime o expande en respuesta a fluctuaciones instantáneas de la presión interna (fuente de volumen). Los $\mathcal{N}$ sistemas de este ensamble estan en contacto entre si por paredes diatérmicas y flexibles, es decir, para cada sistema en este ensamble, el resto es su fuente de calor y de volumen como se muestra en la figura \ref{fig:NPTEns}.\\
 
 \begin{figure}[!h]
     \centering
@@ -158,7 +166,7 @@ Tenemos en este sistema lo siguiente:\\
     ...\\
 \end{center}
 
-Lo anterior debe cumplir con:
+Lo anterior debe cumplir con las ecuaciones (\ref{restrprobNPT})-(\ref{volprobNPT}).
 
 \begin{equation} \label{restrprobNPT}
     1 = \sum_r P_r \\
@@ -182,28 +190,28 @@ El número de formas de microestados correspondientes en que se presenta esta di
     \Omega = \frac{\mathcal{N}!}{\prod_{rn} N_{rn}}
 \end{equation}\\
 
-Y por el postulado de la entropía y de acuerdo a la formula de Stirling:
+Por el postulado de la entropía y de acuerdo a la formula de Stirling obtenemos la siguiente ecuación:
 
 \begin{equation}  \label{entropiaboltzNPT}
     S = kln(\frac{\mathcal{N}}{\prod_{rn} N_{rn}}) = -K\mathcal{N}\sum_{rn} P_{rn} ln(P_{rn})
 \end{equation}\\
 
-Usando el método de los multiplicadores de Lagrange se encuentra la función de partición para el ensamble NPT $\mathcal{Z}$:
+Usando el método de los multiplicadores de Lagrange se encuentra la siguiente ecuación:
 
 \begin{equation} \label{probNPT}
     P_{rn} = \frac{e^{-\beta E_{rn}-\xi V_r}}{\mathcal{Z}}
 \end{equation}
-\begin{equation} \label{funcpartNPT}
-    \mathcal{Z} = \sum_{rn} e^{-\beta E_{rn}-\xi V_r} \quad con\ \beta=\frac{1}{KT} \quad y\ \xi=\frac{P}{KT}
-\end{equation}
+\begin{equation*} \label{funcpartNPT}
+    \text{donde }\mathcal{Z} = \sum_{rn} e^{-\beta E_{rn}-\xi V_r} \quad con\ \beta=\frac{1}{KT} \quad y\ \xi=\frac{P}{KT}\text{ es la función de partición}
+\end{equation*}
 
 La entropía de uno de los sistemas del ensamble es \cite{mcquarrie1976}:
 
-\begin{equation}
+\begin{equation} \label{entrpnpt}
     S = k\beta U + k\xi V + kln(\mathcal{Z})
 \end{equation}
 
-Todas las propiedades termodinámicas se obtienen de la función de partición encontrada:
+Todas las propiedades termodinámicas se obtienen de la función de partición encontrada como se muestra en las ecuaciones (\ref{energNPT})-(\ref{ecestaNPT}).
 
 \begin{equation} \label{energNPT}
     U=-\frac{\partial}{\partial \beta}ln(\mathcal{Z})
@@ -223,39 +231,43 @@ El potencial termodinámico del ensamble isotérmico-isobárico es la energía l
     G(N,P,T)=-\frac{1}{\beta}ln(\mathcal{Z})=U-TS+PV
 \end{equation}\\
 
-\section{Mecánica estadística clásica de N partículas interactuantes
-}
+\section{Mecánica estadística clásica de N partículas interactuantes} \label{MecClasNpart}
 
-En las aplicaciones de la mecánica estadística mas comunes están los cálculos que tienen solución exacta, donde las partículas no interactuan en los sistemas. Sin embargo, esto no siempre es posible en sistemas donde las particulas interactuan, por eso es importante
+\textcolor{blue}{
+Las aplicaciones de la mecánica estadística más inmediatas se realizan en sistemas donde las partículas no interactúan entre sí y corresponden a los casos \textit{ideales}. En estos sistemas los cálculos son analíticos y generalmente existe una solución exacta al problema del cálculo de la función de partición o de las propiedades del sistema. Sin embargo, esta aproximación no siempre es razonable, en particular en sistemas densos donde las partículas interactúan y generan el estado líquido de una sustancia. En estas condiciones la moléculas y átomos interactúan para crear lo que conocemos como el estado líquido del agua y cuyas propiedades experimentales no pueden ser descritas considerando al sistema como ideal.}\\
 
-Supongamos un fluido con $\mathcal{N}$ partículas que interactuan a través de un potencial $\mathcal{V}$ y es conservativo. En el formalismo lagrangiano las ecuaciones de movimiento son \cite{torresdelcastillo_2018}:\\
+Supongamos un fluido con $N$ partículas que interactúan a través de un potencial conservativo $\mathcal{V}$. En el formalismo lagrangiano las ecuaciones de movimiento son (\ref{lagrangeeq}) \cite{torresdelcastillo_2018}\\
 
 \begin{equation} \label{lagrangeeq}
-    \frac{d}{dt}\frac{\partial L}{\partial \dot r_i} - \frac{\partial L}{\partial \dot r_i} = 0
+    \frac{d}{dt}\frac{\partial L}{\partial \dot r_i} - \frac{\partial L}{\partial r_i} = 0,
 \end{equation}\\
-
-donde $L$ es el lagrangiano del sistema:
+donde $L$ es el lagrangiano del sistema como se muestra en (\ref{lagrangiano})
 
 \begin{equation} \label{lagrangiano}
-    L = \sum_{i=1}^{N} \frac{1}{2}m_i\dot{\vec{r_i}}^2-\mathcal{V}({\vec{r}}_1,{\vec{r}}_2,...,{\vec{r}}_N)
+    L = \sum_{i=1}^{N} \frac{1}{2}m_i\dot{\vec{r_i}}^2-\mathcal{V}({\vec{r}}_1,{\vec{r}}_2,...,{\vec{r}}_N).
 \end{equation}\\
-
-con $\mathcal{V}$ el potencial del sistema, este potencial es el que caracteriza la interacción entre moléculas \cite{torresdelcastillo_2018}:
+El potencial $\mathcal{V}$ caracteriza la interacción entre moléculas en el sistema \cite{torresdelcastillo_2018} y la fuerza sobre la partícula $i$ se obtiene a través de
 
 \begin{equation}
-    F_i({\vec{r}}_1,{\vec{r}}_2,...,{\vec{r}}_N) = -\nabla_{r_i}\mathcal{V}({\vec{r}}_1,{\vec{r}}_2,...,{\vec{r}}_N)
+    F_i({\vec{r}}_1,{\vec{r}}_2,...,{\vec{r}}_N) = -\nabla_{r_i}\mathcal{V}({\vec{r}}_1,{\vec{r}}_2,...,{\vec{r}}_N).
 \end{equation}\\
 
-De manera práctica y sin entrar en mucho detalle se puede demostrar facilmente que para el lagrangiano $L$ de la ecuación \ref{lagrangiano}, el hamiltoniano es la energía:
+Adicionalmente, para el lagrangiano $L$ de la ecuación \ref{lagrangiano}, el hamiltoniano clásico es igual a la energía y están dados por
 
 \begin{equation} \label{hamiltoniano}
-    H(\vec{q},\vec{p}) = E = \sum_{i=1}^{N} \frac{1}{2 m_i}\dot{\vec{p_i}}^2 + \sum_{i,j=1}^{N(N-1)/2} \mathcal{V}(r_{ij})
+    H(\vec{p},\vec{q}) = E = \sum_{i=1}^{N} \frac{1}{2 m_i}\vec{p_i}^2 + \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} u(r_{ij})
 \end{equation}\\
 
-En el límite termodinámico clásico semi-cuántico las sumas de energías de las funciones de partición se vuelven integrales en el espacio fase. Para un sistema con partículas clásicas independientes e indistinguibles, su función de partición es \cite{mcquarrie1976}:
+donde $u(r_{ij})$ es una energia potencial entre pares que depende unicamente de la distancia entre estas y $\vec{p_i}$ es el momento lineal que se denota por (\ref{momlin}).
+
+\begin{equation}\label{momlin}
+    \vec{p_i} = m\dot{\vec{r_i}}
+\end{equation}
+
+En el límite termodinámico las sumas en las funciones de partición se vuelven integrales en el espacio fase. Para un sistema con partículas clásicas independientes e indistinguibles, la función de partición en coordenadas cartesianas es \cite{mcquarrie1976},
 
 \begin{equation} \label{funcpartclas}
-    \mathcal{Z} = \frac{1}{N!h^{3N}}\int ...\int e^{-\beta H(\vec{q},\vec{p})}dx_1dy_1dz_1dp_{x_1}dp_{y_1}...dy_N dz_Ndp_{x_N}dp_{y_N}dp_{z_N}
+    \mathcal{Z} = \frac{1}{N!h^{3N}}\int ...\int e^{-\beta H(\vec{r},\vec{p})}dx_1dy_1dz_1dp_{x_1}dp_{y_1}...dy_N dz_Ndp_{x_N}dp_{y_N}dp_{z_N}.
 \end{equation}\\
 
 Sustituyendo la ecuación \ref{hamiltoniano} en la ecuación \ref{funcpartclas}\cite{feynman1972statistical}:
@@ -266,32 +278,29 @@ Sustituyendo la ecuación \ref{hamiltoniano} en la ecuación \ref{funcpartclas}\
 
 donde $Z_N$ es la integral de configuración clásica.
 
-\section{Función de distribución radial}
+\textcolor{green}{Sugiero que la siguiente sección se titule 
+Interacciones intermoleculares y se agregue una breve descripción de interacciones de Van der Waals y de interacción de Coulomb, posteriormente ya puedes mencionar que el potencial de Lennard-Jones modela a las primeras y a interacciones repulsivas de corto alcance}
 
-En la anterior sección presentamos la integral de configuración clásica en la ecuación \ref{funcpartclasconfig}\\
 
-\begin{equation} \label{intconfclas}
-    Z_N = \int e^{-\beta \mathcal{V}(x_1,...,z_N)}dx_1dy_1...dy_N dz_N
-\end{equation}\\
+\section{Interacciones intermoleculares}
 
-La densidad de probabilidad para la partícula 1 en $\mathbf{r}_1$, partícula 2 en $\mathbf{r}_2$,..., es \cite{feynman1972statistical}:\\
+Las interacciones de Van der waals son interacciones atractivas que ocurren cuando las nubes electrónicas de los átomos están muy cerca (orden de angstroms), sin embargo se repelen fuertemente una vez que están extremadamente cerca para evitar traslapes de nubes electrónicas.\\
 
-\begin{equation}
-    \frac{e^{-\beta \mathcal{V}(x_1,...,z_N)}}{\int e^{-\beta \mathcal{V}(x_1,...,z_N)}dx_1...dz_N}
-\end{equation}\\
+Estas interacciones dependen de la distancia a la 6ta potencia y son débiles enérgicamente en comparación con la energía cinética de una molécula en una solución \cite{201753}. La fuerza de Van der waals tiene tres variantes \cite{ROY20151}:
 
-La densidad de probabilidad de encontrar una partícula en $\mathbf{r}_1$ y otra en $\mathbf{r}_2$ esta definida como \cite{feynman1972statistical}:\\
+\begin{itemize}
+    \item Fuerza Keesom: Fuerza de atracción entre dos dipolos permanentes.
+    \item Fuerza Debye: Fuerza de atracción entre un dipolos permanentes y un dipolo inducido.
+    \item Fuerza London: Fuerza de atracción entre dos dipolos inducidos.
+\end{itemize}
 
-\begin{equation}
-    g(r_{12}) = \frac{N(N-1)}{Z_N}
-    \int e^{-\beta\mathcal{V}}dx_3...dz_N
-\end{equation}\\
+La interacción o fuerza de coulomb es la mas fuerte en las interacciones intermoleculares y a veces tan fuerte como los enlaces químicos, la fuerza depende inversamente del cuadrado de la distancia como se puede observar en la ecuación (\ref{coulombforce}) \cite{ISRAELACHVILI201153}.
 
-$g(r_{12})$ es la \textbf{Función de distribución radial}\\
+\begin{equation} \label{coulombforce}
+    F(r_{ij}) = \frac{q_i q_j}{4\pi \epsilon r^2_{ij}}
+\end{equation}
 
-La interpretación física de la función de distribucion radial es para una molécula fija en $\mathbf{r}_1$ es posible encontrar otros números de moléculas en $\mathbf{r}_2$.
-
-\section{Potencial de Lennard-Jones}
+\subsection{Potencial de Lennard-Jones}
 
 El potencial de Lennard-Jones 12-6 es:
 
@@ -305,7 +314,7 @@ $\sigma: $ valor de r donde $v^{LJ}(r)=0$\\
 
 $\epsilon : $profundidad del pozo del potencial\\
 
-Este potencial entre pares modela enlaces débiles de Van der Waals entre gases nobles. Es usado de manera frecuente en los campos de fuerza los cuales se mencionan mas adelante en el texto. Los valores de $\sigma$ y $\epsilon$ se ajustan a propiedades conocidas del gas en cuestión. A continuacion en la figura \ref{fig:LJ126} se muestra un potencial Lennard-Jones 12-6:\\
+Este potencial entre pares modela interacciones atractivas de Van der Waals y a las repulsivas de corto alcance. Es usado de manera frecuente en los campos de fuerza los cuales se mencionan mas adelante en el texto. Los valores de $\sigma$ y $\epsilon$ se ajustan a propiedades conocidas del átomo en cuestión. A continuación en la figura \ref{fig:LJ126} se muestra un potencial Lennard-Jones 12-6:\\
 
 \begin{figure}[!h]
     \centering
@@ -314,14 +323,12 @@ Este potencial entre pares modela enlaces débiles de Van der Waals entre gases 
     \label{fig:LJ126}
 \end{figure}
 
-\newpage
-
 Este potencial esta dividido en tres intervalos en el eje $r$ \cite{ADAMS2001763}:
 
 \begin{itemize}
     \item El primer intervalo es el potencial repulsivo que esta antes de la linea roja en la figura \ref{fig:LJ126}, este es para evitar el traslape de nubes electrónicas (Principio de exclusión de pauli).
     \item El pozo del potencial es debido a la cohesión en la fase condensada de la materia.
-    \item La parte atractiva de este potencial es creada por dipolos temporales por fluctuaciones de las nubes electronicas \cite{INOUE2011157}.
+    \item La parte atractiva de este potencial es causada por la interacción de van der waals.
 \end{itemize}
 
 \begingroup
@@ -331,13 +338,13 @@ Este potencial esta dividido en tres intervalos en el eje $r$ \cite{ADAMS2001763
 
 \section{Estructura de los nanotubos de carbono}
 
-En la simulación presentada se usó un nanotubo de carbono de una capa (SWCNT por sus siglas en ingles), así, es de interés explicar caracteristicas, geometría y algunas propiedades.\\
+En la simulación presentada se usó un nanotubo de carbono de una capa (SWCNT por sus siglas en ingles), por lo que es necesario explicar características, geometría y algunas propiedades de estos nanomateriales.\\
 
 \begin{table}[h!]
     \centering
     \begin{tabular}{ |p{2cm}|p{3cm}|  }
     \hline
-    \multicolumn{2}{|c|}{Caracteristicas} \\
+    \multicolumn{2}{|c|}{Características} \\
     \hline
     $a_{cc}$   & 1.42 \AA \\
     \hline
@@ -351,8 +358,6 @@ En la simulación presentada se usó un nanotubo de carbono de una capa (SWCNT p
     \caption{Caracteristicas del carbono y enlaces de carbono \cite{Melendez2016}}
     \label{carbono}
 \end{table}
-
-\newpage
 
 Los nanotubos de carbonos son una sabana de un arreglo hexagonal de carbono enrollados en un eje para formar un cilindro, fueron descubiertos por Iijima en experimentos usando el método de arco de descarga en 1991 \cite{Iijima1991}.\\
 
@@ -371,12 +376,12 @@ Los nanotubos de carbonos son una sabana de un arreglo hexagonal de carbono enro
     \caption{Chiralidad y simetría en nanotubos \cite{ShigeoChiral}}
 \end{figure} \label{fig:GeoVectChir}
 
-La geometría se puede describir usando los vectores $\vec{a_1}$ y $\vec{a_2}$ por convención estan arreglados como se muestra en las figuras [2.1]. Usando estos podemos describir las siguientes caracteristicas \cite{Melendez2016}:\\
+La geometría se puede describir usando los vectores $\vec{a_1}$ y $\vec{a_2}$ por convención están arreglados como se muestra en las figuras [2.1]. Usando estos podemos describir las siguientes características \cite{Melendez2016}:\\
 
 \begin{itemize}
     \item Vector chiral (n,m): $C_h = n\vec{a_1} + m\vec{a_2}$
     \item Magnitud del vector chiral: $\left|C_h\right| = \sqrt{3}a_{cc}\sqrt{n^2+m^2+nm}$
-    \item Diametro del nanotubo: $d_T = \left|C_h\right|/\pi$
+    \item Diámetro del nanotubo: $d_T = \left|C_h\right|/\pi$
 \end{itemize}
 
 El vector de traslación $\vec{T}$ es el vector mas corto perpendicular a $C_h$ que empieza y termina en un punto del arreglo hexagonal:
@@ -396,7 +401,7 @@ donde:
     \end{cases}
 \end{equation}\\
 
-Los nanotubos estan categorizados por su notación (n,m) \cite{Melendez2016}:
+Los nanotubos están categorizados por su notación (n,m) \cite{Melendez2016}:
 
 \begin{itemize}
     \item Armchair: (n,n) $\left|C_h\right|=3na_{cc}$ y $\left|\vec{T}\right|=\sqrt{3}a_{cc}$
@@ -412,3 +417,219 @@ Lo anterior asegura que la notación (n,m) define completamente la estructura de
 \let\clearpage\relax
 \chapter{Dinámica molecular}
 \endgroup
+
+La imposibilidad de usar la mecánica estadística como método para estudiar fluidos interactuantes y con la llegada de la alta capacidad de procesamiento computacional dio lugar a la posibilidad de usar la aproximación Born-Oppenheimer(aproximación para escribir el hamiltoniano en términos de sus interacciones nucleares donde sus movimientos de electrones han sido promediados) para resolver las ecuaciones de movimiento de Newton para sistemas atómicos. \\
+
+La simulación conecta los resultados experimentales con los modelos de simulación y viceversa mediante las propiedades termodinámicas del sistema, y estructuralmente usando la función de distribución radial. La simulación molecular de un sistema nos permite declarar detalles microscópicos como geometrías, masas, interacciones y demas; lo cual es una ruta directa a las propiedades macroscópicas de interés.\\
+
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=.7\textwidth,keepaspectratio=true]{conexionteoriaexpsim.png}
+    \caption{Conexión entre teoría, experimentación y simulación molecular \cite{Allen2017}}
+    \label{fig:conteexpsim}
+\end{figure}
+
+\section{Fundamentos de dinámica molecular}
+
+La dinámica molecular resuelve las ecuaciones de movimiento descritas en la sección \ref{MecClasNpart} para un sistema atómico, molecular o centros de masa de configuraciones moleculares. Las ecuaciones de hamilton para el hamiltoniano en la ecuación \ref{hamiltoniano} son:\\
+
+\begin{equation}
+    \mathbf{r}_i = \mathbf{p}_i/m_i \\
+\end{equation}\\
+\begin{equation}
+    \mathbf{\dot p}_i = -\nabla_{\mathbf{r}_i}\mathcal{V} = \mathbf{F}_i
+\end{equation}\\
+
+Sin embargo, una ventaja de la convención lagrangiana es la posibilidad de incorporar fuerzas de constricción a las ecuaciones de movimiento de forma directa, donde $g_i$ es la fuerza de constricción \cite{raabe2017}:\\
+
+\begin{equation} \label{lagrangeeqconstraint}
+    \frac{d}{dt}\frac{\partial L}{\partial \dot r_i} - \frac{\partial L}{\partial r_i} = g_i
+\end{equation}\\
+
+\section{Métodos de diferencia finitas}
+
+La solución de las ecuaciones de movimiento se pueden resolver numéricamente por computadora con métodos de diferencias finitas. Existen diferentes algoritmos que son computacionalmente eficientes, sin embargo también es importante remediar dificultades como el error que puede insertar el calculo de números de punto flotante que usa la computadora y que esto pueda diferir en nuestros objetivos físicos(e.g no conservar eficientemente la energía). En la actualidad estos problemas son menos importantes por la capacidad de cómputo que existe y la gran cantidad de estudios y optimizaciones en este tema pero no por eso deben ignorarse en la simulación.\\
+
+Los algoritmos de integración usados en dinámica molecular son relativamente sencillos de derivar. Primero, hagamos una expansión de McLaurin de la posición, velocidad y aceleración alrededor del paso $\delta t$:
+
+\begin{align} \label{taylorexpr}
+\begin{split}
+    \mathbf{r}(t + \delta t) &= \mathbf{r}(t)+\delta t\dot{\mathbf{r}}(t) + \frac{1}{2}\delta t^2 \ddot{\mathbf{r}}(t)+...\\
+                             &= \mathbf{r}(t)+\delta t\mathbf{v}(t) + \frac{1}{2}\delta t^2 \mathbf{a}(t)+...
+\end{split}
+\end{align}
+\begin{equation}\label{taylorexpv}
+    \mathbf{v}(t + \delta t) = \mathbf{v}(t)+\delta t\mathbf{a}(t) + \frac{1}{2}\delta t^2 \mathbf{j}(t)+...
+\end{equation}
+\begin{equation}\label{taylorexpa}
+    \mathbf{a}(t + \delta t) = \mathbf{a}(t)+\delta t\mathbf{j}(t) + \frac{1}{2}\delta t^2 \dot{\mathbf{j}}(t)+...
+\end{equation}\\
+
+Las ecuaciones son iterativas, dada la función dinámica anterior a un tiempo $t$ podemos conocer la función en el siguiente paso $t + \delta t$.
+
+\subsection{Algoritmo de Verlet}
+
+Calculamos otras series de McLaurin de $\mathbf{v}(t+\frac{1}{2}\delta t)$ y $\mathbf{r}(t-\delta t)$.\\
+
+\begin{equation}\label{taylorexpr-}
+    \mathbf{r}(t - \delta t) = \mathbf{a}(t)+\delta t\mathbf{j}(t) + \frac{1}{2}\delta t^2 \mathbf{\dot{j}}(t)-...
+\end{equation}
+
+La ecuación (\ref{verletv1/2}) es la primera ecuación de Verlet:\\
+\begin{equation}\label{verletv1/2}
+    \mathbf{v}(t + \frac{1}{2}\delta t) = \mathbf{v}(t)+\frac{1}{2}\delta t\mathbf{a}(t) +...
+\end{equation}\\
+
+Sustituyendo la ecuación (\ref{verletv1/2}) en la ecuación (\ref{taylorexpr}) obtenemos la segunda ecuación de Verlet:
+
+\begin{align} \label{verletr}
+\begin{split}
+    \mathbf{r}(t + \delta t) &= \mathbf{r}(t)+\delta t\dot{\mathbf{r}}(t) + \frac{1}{2}\delta t^2 \ddot{\mathbf{r}}(t)+...\\
+                             &= \mathbf{r}(t)+\delta t\left[\mathbf{v}(t) + \frac{1}{2}\delta t \mathbf{a}(t)+...\right]\\
+                             &= \mathbf{r}(t)+\delta t \mathbf{v}(t+\frac{1}{2}\delta t)
+\end{split}
+\end{align}
+
+Sustituyendo las ecuaciones (\ref{verletv1/2}) y (\ref{taylorexpa}) en la ecuación (\ref{taylorexpv}) obtenemos la tercera ecuación de verlet:
+
+\begin{align} \label{verletv}
+\begin{split}
+    \mathbf{v}(t + \delta t) &= \mathbf{v}(t)+\delta t\mathbf{a}(t) + \frac{1}{2}\delta t^2 \mathbf{j}(t)+...\\
+                             &= \mathbf{v}(t)+\frac{1}{2}\delta t\mathbf{a}(t) + \frac{1}{2}\delta t\mathbf{a}(t)+ \frac{1}{2}\delta t^2 \mathbf{j}(t)+...\\
+                             &= \mathbf{v}(t + \frac{1}{2}\delta t) + \frac{1}{2}\delta t\mathbf{a}(t + \delta t)
+\end{split}
+\end{align}
+
+El algoritmo empieza calculando la ecuación (\ref{verletv1/2}) el resultado del cálculo pasa a la ecuación (\ref{verletr}) y para calcular la última ecuación (\ref{verletv}) computamos las fuerzas sobre la partícula para obtener la aceleración en $t + \delta t$.
+
+También si se quiere obtener la energía cinética se deriva la siguiente formula de la velocidad usando (\ref{taylorexpv}) y (\ref{taylorexpr-}):
+
+\begin{equation}
+    \mathbf{v}(t)=\frac{\mathbf{a}(t + \delta t)-\mathbf{r}(t - \delta t)}{2\delta t}
+\end{equation}
+
+\subsection{Algoritmo salto de rana(leap frog scheme)}
+
+Otra alternativa del algoritmo de Verlet es una que se deriva de este \cite{Allen2017}:\\
+
+\begin{equation} \label{leapfrogv1/2}
+    \mathbf{v}(t + \frac{1}{2}\delta t)=\mathbf{v}(t - \frac{1}{2}\delta t)+\delta t\mathbf{a}(t)
+\end{equation}
+
+\begin{equation} \label{leapfrogr}
+    \mathbf{r}(t + \delta t)= \mathbf{r}(t)+\delta t \mathbf{v}(t+\frac{1}{2}\delta t)
+\end{equation}
+
+Se almacena en memoria $\mathbf{r}(t)$, $\mathbf{v}(t - \frac{1}{2}\delta t)$ y computamos fuerzas para obtener $\mathbf{a}(t)$, con estos resultados en memoria podemos empezar calculando la ecuación (\ref{leapfrogv1/2}) para usarlo en la ecuación (\ref{leapfrogr}).
+
+\section{Condiciones de frontera periódicas y convención de minima imagen}
+
+Supongamos un cubo de simulación de longitud L, si se deseara realizar una simulación del sistema se necesitaría establecer la interacción molécula-pared. Para evitar estas paredes, empleamos condiciones de frontera periódicas, i.e. cuando una partícula deja el cubo, su imagen entra por la cara opuesta como en la figura \ref{fig:PBC}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=.7\textwidth,keepaspectratio=true]{PBC.png}
+    \caption{Un sistema periódico bidimensional \cite{Allen2017}}
+    \label{fig:PBC}
+\end{figure}
+
+Las condiciones de frontera periódicas simulan la presencia de un bulto. El problema de usar estas condiciones es que al calcular el potencial o la fuerza entre pares se podría tomar en cuenta la fuerza de si misma, esto esta prohibido evidentemente por la ecuación (\ref{hamiltoniano}).
+
+Para evitar este problema truncamos el radio de los potenciales que sean menor o igual que la mitad de la longitud del cubo:
+
+\begin{equation}\label{MIC}
+    U(\mathbf{r}_{ij}) =
+    \begin{cases} 
+    U(\mathbf{r}_{ij}),& \text{si } r_c\leq L/2\\
+    0,& \text{si } r_c\geq L/2
+    \end{cases}
+\end{equation}\\
+
+\section{Termostato de Nose-Hoover}
+
+El termostato de Nose-Hoover es cercano a un verdadero ensamble canónico, nose y hoover extendieron el hamiltoniano del sistema introduciendo un baño térmico y un término de fricción a las ecuaciones de movimiento. La fricción es proporcional al producto de la velocidad de cada partícula y un parámetro de fricción $\xi$(esta es una cantidad dinámica con su propio momento $p_\xi$). Las ecuaciones de movimiento son reemplazadas por \cite{evans1985} \cite{gromacsdoc}:\\
+
+\begin{equation} \label{NHmotion}
+    \frac{d^2\mathbf{r}_i}{dt^2} = \frac{\mathbf{F}_i}{m_i}-\frac{p_\xi}{Q}\frac{d\mathbf{r}_i}{dt}
+\end{equation}\\
+
+donde la ecuación de movimiento para el parámetro $\xi$ del baño térmico es:\\
+
+\begin{equation}
+    \frac{dp_\xi}{dt}=(T-T_0),\quad T_0\ es\ la\ temperatura\ de\ referencia
+\end{equation}\\
+
+La cantidad conservada para las ecuaciones de Nose-Hoover es:\\
+
+\begin{equation} \label{conservedNoseHoover}
+    \mathcal{H} = \sum_{i=1}^{N}\frac{\mathbf{p}_i^2}{2m_i} + U(\mathbf{r}_1,...,\mathbf{r}_N)+\frac{p_\xi^2}{2Q} + N_fKT\xi
+\end{equation}\\
+
+\begin{equation*} \label{taut}
+    \text{donde }Q=\frac{\tau_T^2 T_0}{4\pi^2} \text{ y $N_f$ es el número de grados de libertad del sistema}
+\end{equation*}\\
+
+El termostato de Nose-Hoover permite una relajación oscilatoria a la temperatura de referencia por lo que tarda mas tiempo que otros termostatos en llegar a la temperatura de referencia.\\
+
+\section{Barostato de Parrinello-Rahman}
+
+Este barostato nos da un verdadero ensamble NPT. Con el barostato los vectores de la caja estan representados por $\mathbf{b}$ y obedecen la ecuación de movimiento matricial\cite{gromacsdoc} \cite{simone1993}:\\
+
+\begin{equation} \label{parrrahman}
+    \frac{d\mathbf{b}^2}{dt^2}=V\mathbf{W}^{-1}b'^{-1}(\mathbf{P}-\mathbf{P}_{ref})
+\end{equation}\\
+
+El volumen de la caja es $V$, $\mathbf{W}$ es la matriz de parámetros del piston y las matrices $\mathbf{P},\mathbf{P}_{ref}$ es la presión instantánea y la presión de referencia respectivamente. Este barostato comunmente se usa en combinación con el termostato Nose-Hoover. Asi las ecuaciones de movimiento y la cantidad conservada $\mathcal{H}$ es \cite{gromacsdoc}:
+
+\begin{equation} \label{NHPRmotionr}
+    \frac{d^2\mathbf{r}_i}{dt^2} = \frac{\mathbf{F}_i}{m_i}-\frac{p_\xi}{Q}\frac{d\mathbf{r}_i}{dt} + \frac{\mathbf{r}_i}{dV}\left(\ddot{V}-\frac{2\dot{V}}{V}\right)
+\end{equation}
+\begin{equation} \label{NHPRmotionV}
+    \frac{d^2 V}{dt^2} = \frac{\dot{\xi}\dot{V}}{\xi} + \xi^2\mathbf{W}^{-1}(\mathbf{P}-\mathbf{P}_{ref})
+\end{equation}
+\begin{equation} \label{conservedNoseHooverParrRahm}
+    \mathcal{H} = \sum_{i=1}^{N}\frac{\mathbf{p}_i^2}{2m_i} + U(\mathbf{r}_1,...,\mathbf{r}_N)+\frac{p_\xi^2}{2Q} + N_fKT\xi + \sum_i P_{ii}V + \sum_{i,j}\frac{1}{2}W_{ij}\left(\frac{db_{ij}}{dt}\right)^2
+\end{equation}\\
+
+con $\mathbf{W}^{-1}_{ij}=\frac{4\pi^2 \beta_{ij}}{3\tau_{p}^2 L}$ y L la longitud del cubo
+
+\section{Campos de fuerzas}
+
+Los campos de fuerzas en una simulación es la energía potencial entre pares que obedecerá el sistema cuando se realicen cálculos de fuerzas. Existen muchos tipos de energías potenciales de interacción entre pares utilizados en la dinámica molecular. Este proceso es parte de la modelación del sistema y es importante para reproducir resultados experimentales. Comúnmente un campo de fuerzas tipo I es como el siguiente:
+
+\begin{align}\label{FF}
+    U_{conf} &= \sum_{enlaces}K_r\left(r-r_0\right)^2 + \sum_{angulos}K_{\theta}\left(\theta-\theta_0\right)^2 \\
+             &+ \sum_{diedros}K_{\phi}\left[1-cos(n\phi-\delta)\right] \\
+             &+ \sum_{diedros\ impropios}K_{\omega}\left(\omega-\omega_0\right)^2 + \sum_{cargas}\left(\frac{q_i q_j}{4\pi \epsilon r^2_{ij}}\right) \\
+             &+ \sum_{VdW} 4 \epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{6}\right]    
+\end{align}
+
+La siguiente tabla \ref{FFallen} muestra otros campos de fuerzas:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l c l}
+    \hline
+    Campo de Fuerza & Clase & Dominio \\
+    \hline
+    OOPLS & I & péptidos y pequeños orgánicos \\
+    CHARM27 & I & ADN, ARN y lípidos \\
+    GAFF & I & pequeños orgánicos y diseño de drogas \\
+    GROMOS ffG45a3 & I & lípidos y micelas\\
+    clayFF & II & minerales hidratados \\
+    AMBER ff02 & III & átomos polarizables \\
+    AMOEBA & III & multipolos polarizables y multipolos distribuidos \\
+    MARTINI & III & modelos de grano grueso, proteinas, lípidos y polímeros \\
+    \hline
+    \end{tabular}
+    \caption{Ejemplo de campo de fuerzas, dominios de aplicación y clases\cite{Allen2017}}
+    \label{FFallen}
+\end{table}
+
+\begin{itemize}
+    \item Tipo I: son potenciales parametrizados para cada tipo de átomo en el sistema.
+    \item Tipo II: potenciales parametrizados para todos los átomos incluyendo términos cúbicos en enlaces y otros.
+    \item Tipo III: potenciales parametrizados para todos los átomos extendiendo los cálculos electrostáticos para incluir polarización. Estos también incluyen a los campos de grano grueso.
+\end{itemize}
+
