@@ -3,43 +3,60 @@
 %
 \chapter{Mecánica estadística de equilibrio}
 \section{Fundamentos teóricos}
-La mecánica estadística estudia propiedades de los sistemas macroscópicos termodinámicos a partir de sus propiedades microscópicas. \textcolor{red}{Suponemos un sistema aislado caracterizado por las variables termodinámicas energía $U$, volumen $V$ y número de partículas $N$}. Una cantidad macroscópica de estado (ó {\it macroestado} $(U,V,N)$) en el sistema es el promedio de propiedades microscópicas. Por otro lado, un estado microscópico del sistema, \textcolor{red}{definido por coordenadas $q$ y momentos $p$,} es un punto en el espacio fase $(q,p)$ correspondiente al macroestado $(U,V,N)$ y se denomina {\it microestado}, y el total de microestados asociados a un macroestado se denota por $\Omega(U,V,N)$.\\
+La mecánica estadística estudia propiedades de los sistemas macroscópicos termodinámicos a partir de las leyes dinámicas microscópicas. Suponemos un sistema aislado caracterizado por las variables termodinámicas energía $U$, volumen $V$ y número de partículas $N$. Una cantidad macroscópica de estado (ó {\it macroestado} $(U,V,N)$) en el sistema es el promedio de propiedades microscópicas, en cambio, un estado microscópico del sistema está definido por coordenadas $q$ y momentos $p$ correspondientes al macroestado $(U,V,N)$, este se denomina {\it microestado}. El total de microestados asociados a un macroestado se denota por $\Omega(U,V,N)$.\\
 
-\textcolor{blue}{De acuerdo a la mecánica clásica, la dinámica de un sistema de partículas se puede resolver solucionando las ecuaciones de movimiento de las partículas.}
-Sin embargo, \textcolor{blue}{cuando las partículas interactúan entre sí, resolver la dinámica del sistema por cualquiera de los métodos en dinámica (Newton, Lagrange o Hamilton) sería un cálculo básicamente imposible o poco práctico. A pesar de ello el marco conceptual es extremadamente útil y por ello describiremos enseguida los postulados de la mecánica estadística de equilibrio y el concepto de ensamble.}\\
+% De acuerdo con la mecánica clásica, la dinámica de un sistema de partículas se resuelve solucionando las ecuaciones de movimiento de las partículas.
+% Sin embargo, cuando las partículas interactúan entre sí, resolver la dinámica del sistema por cualquiera de los métodos en dinámica (Newton, Lagrange o Hamilton) sería un cálculo básicamente imposible o poco práctico. A pesar de ello el marco conceptual es extremadamente útil y por ello describiremos enseguida los postulados de la mecánica estadística de equilibrio y el concepto de ensamble.\\
 
-Dos postulados fundamentales de la física estadística crean dicha conexión entre ambas escalas, la microscópica y macroscópica \cite{tuckerman2010}: \textcolor{green}{mencionar las escalas a las que te refieres para que la idea se entienda y el texto se pueda conectar}\\
+Dos postulados fundamentales de la física estadística crean dicha conexión entre las escalas microscópica y macroscópica:\\
 
 \begin{itemize}
-    \item Postulado de equiprobabilidad: En un sistema aislado todos sus microestados accesibles son igualmente probables, i.e., a un macroestado de equilibrio le corresponden mayor número de microestados.\\
+    \item Postulado de equiprobabilidad: Cuando un sistema macroscópico está en equilibrio termodinámico, sus microestados asociados son igualmente probables \cite{Huang_1987}.\\
     
-    \item Postulado de la entropía: En un sistema en equilibrio, su entropía \textcolor{red}{$S$} \textcolor{yellow}{esta} dada por:
-    \begin{equation}
+    \item Postulado de la entropía: En un sistema en equilibrio, su entropía $S$ está dada por \cite{tuckerman2010}:
+    \begin{equation}\label{postulado_entropia_boltx}
         S=Kln(\Omega)
     \end{equation}
-    con K una constante y $\Omega$ el \textcolor{yellow}{número} de microestados correspondientes.
+    con K una constante y $\Omega$ el número de microestados correspondientes.
 \end{itemize}
 
 
 \section{Ensambles}
 
-Un ensamble es un conjunto hipotético de $N$ replicas de un sistema que se encuentra en un macroestado dado y cada replica esta en algún microestado accesible.\\
+Un ensamble es una colección hipotética de $N$ réplicas descritas por el mismo conjunto de interacciones microscópicas y que comparten un conjunto de propiedades macroscópicas (Energía, volumen, número de partículas, etc.) \cite{tuckerman2010}.\\
 
-Los ensambles pueden ser definidos dependiendo de las situaciones termodinámicas que se impongan al sistema, y dependiendo de \textcolor{yellow}{estos} se pueden extraer propiedades estáticas macroscópicas como la energía, temperatura, presión, etc. Los ensambles que cumplen esta propiedad estática aun cuando el sistema se encuentra evolucionando en el tiempo son llamados \textit{Ensambles de equilibrio}.\\
+% Los ensambles pueden ser definidos dependiendo de las situaciones termodinámicas que se impongan al sistema, y dependiendo de \textcolor{yellow}{estos} se pueden extraer propiedades estáticas macroscópicas como la energía, temperatura, presión, etc. Los ensambles que cumplen esta propiedad estática aun cuando el sistema se encuentra evolucionando en el tiempo son llamados \textit{Ensambles de equilibrio}.\\
+En teoría clásica de ensambles todas las observables macroscópicas de un sistema están conectados a una función microscópica. 
 
-En teoría clásica de ensambles todas las observables macroscópicas de un sistema están conectados a una función microscópica. Por el primer postulado, se puede calcular el promedio temporal de una variable dinámica $A$ como en la ecuación (\ref{promediotemp}), 
+Se puede calcular el promedio temporal de una variable dinámica $A$ como en la ecuación (\ref{promediotemp}), 
 
 \begin{equation} \label{promediotemp}
-    \langle A\rangle = \lim_{t\to\infty}\frac{1}{t}\int_0^t A(t)dt
+    \langle A\rangle_{tiempo} = \lim_{t\to\infty}\frac{1}{t}\int_0^t A(t)dt
 \end{equation}\\
-\textcolor{green}{en el intervalo de tiempo de 0 a $t$,}
-o por un promedio de ensamble asociado a su probabilidad como en la ecuación(\ref{promedioequprob}) \cite{tuckerman2010}. \\
+en el intervalo de tiempo de 0 a $t$,
+o por un promedio de ensamble asociado a su probabilidad como en la ecuación (\ref{promedioequprob}) \cite{tuckerman2010}. \\
 \begin{equation} \label{promedioequprob}
-    \langle A\rangle =\sum_r A_r P_r
+    \langle A\rangle_{ensamble} =\sum_r A_r P_r
 \end{equation}\\
 con $P_r$ la probabilidad del r-ésimo microestado y $A_r$ el valor de $A$ en el r-ésimo microestado.\\
 
-\textcolor{green}{La Tabla \ref{tiposEnsamble} resume cuatro de los ensambles de equilibrio más comúnmente usados.}
+Las ecuaciones (\ref{promediotemp}) y (\ref{promedioequprob}) se encuentran directamente relacionados por dos enunciados importantes:
+
+\begin{itemize}
+    \item Postulado de Gibbs: El promedio de una propiedad mecánica corresponde a un propiedad termodinámica paralela \cite{mcquarrie1976}.\\
+    
+    \begin{equation}
+        E \Longleftrightarrow \left \langle E \right \rangle
+    \end{equation}
+    
+    \item Hipótesis ergódico: Medir un sistema para N instantes en el tiempo tiene las mismas propiedades estadísticas que medir N sistemas arbitrarios al mismo tiempo de un ensamble \cite{mcquarrie1976}:
+    \begin{equation}
+        \left \langle A \right \rangle_{tiempo} \Longleftrightarrow \left \langle A \right \rangle_{ensamble}
+    \end{equation}
+\end{itemize}
+
+
+La Tabla \ref{tiposEnsamble} resume cuatro de los ensambles de equilibrio más comúnmente usados.
 
 \begin{table}[h!]
     \centering
@@ -59,8 +76,7 @@ con $P_r$ la probabilidad del r-ésimo microestado y $A_r$ el valor de $A$ en el
 
 \subsection{Ensamble Canónico NVT}
 
-Este ensamble esta formado por $\mathcal{N}$ 
-\textcolor{green}{revisar el significado de $N$} copias de un sistema en equilibrio con N partículas, una fuente de calor a temperatura T. Imaginemos que los $\mathcal{N}$ sistemas del ensamble están en contacto entre si mediante paredes diatérmicas, i.e. para cada sistema en este ensamble, el resto es su fuente de calor como se muestra en la figura \ref{fig:CanonicEns}.\\
+El ensamble canónico está formado por $\mathcal{N}$ copias de un sistema en equilibrio con N partículas, una fuente de calor a temperatura T. Los $\mathcal{N}$ sistemas del ensamble están en contacto entre si mediante paredes diatérmicas, es decir, para cada sistema en este ensamble, el resto es su fuente de calor como se muestra en la figura \ref{fig:CanonicEns}.\\
 
 \begin{figure}[!h]
     \centering
@@ -71,9 +87,9 @@ Este ensamble esta formado por $\mathcal{N}$
 
 \newpage
 
-Las partes del ensamble se encuentran en alguno de los $E_r$ niveles de energía, estos a su vez toman y ceden energía con su alrededor, es decir, los otro microestados. Notar que puede haber degeneración de algunos microestados.\\
+Los sistemas del ensamble se encuentran en algunos de los $E_r$ niveles de energía, estos a su vez toman y ceden energía con su alrededor, es decir, los otro sistemas. Puede haber degeneración en algunos sistemas (sistemas diferentes pueden tener el mismo nivel de energía macroscópico).\\
 
-Tenemos:\\
+De acuerdo a lo anterior, tenemos:\\
 \begin{center}
     $N_1$ sistemas con energía $E_1$\\
     $N_2$ sistemas con energía $E_2$\\
@@ -83,14 +99,14 @@ Tenemos:\\
 \end{center}
 
 
-Cumple las dos ecuaciones siguientes:
+Lo previo cumple las ecuaciones (\ref{restrprob}) y (\ref{energiaprob}):
 
 \begin{equation} \label{restrprob}
     1 = \sum_r P_r \\
 \end{equation}
 
 \begin{equation} \label{energiaprob}
-    E = U = \langle E\rangle = \sum_r P_r E_r
+    \langle E\rangle = \sum_r P_r E_r
 \end{equation}
 
 \begin{center}
@@ -98,19 +114,19 @@ Cumple las dos ecuaciones siguientes:
 \end{center}
 
 
-El número de formas de microestados correspondientes en que se presenta esta distribución es:\\
+El número de formas de microestados correspondientes en que se presenta esta distribución es:\\ \textcolor{red}{Dar una mejor explicación}
 
 \begin{equation} \label{ditrbmicro}
     \Omega = \frac{\mathcal{N}!}{\prod_r N_r}
 \end{equation}\\
 
-Y por el postulado de la entropía y de acuerdo a la formula de Stirling se encuentra la ecuación (\ref{entropiaboltz})
+Por la ecuación (\ref{postulado_entropia_boltx}) y de acuerdo con la fórmula de Stirling se encuentra la ecuación (\ref{entropiaboltz})
 
 \begin{equation}  \label{entropiaboltz}
-    S = kln(\frac{\mathcal{N}}{\prod_r N_r}) = -K\mathcal{N}\sum_r P_rln(P_r)
+    S = Kln(\frac{\mathcal{N}}{\prod_r N_r}) = -K\mathcal{N}\sum_r P_rln(P_r)
 \end{equation}\\
 
-Usando el método de los multiplicadores de Lagrange se encuentra la siguiente ecuación \cite{greiner1995}:
+Aplicando el método de los multiplicadores de Lagrange se halla lo siguiente \cite{greiner1995}:
 
 \begin{equation} \label{probcan}
     P_r = \frac{e^{-\beta E_r}}{\mathcal{Z}}
@@ -119,10 +135,11 @@ Usando el método de los multiplicadores de Lagrange se encuentra la siguiente e
     \text{donde }\mathcal{Z} = \sum_r e^{-\beta E_r \quad con\ \beta=\frac{1}{KT}} \text{ es la función de partición canónica}
 \end{equation*}
 
-La entropía dentro de unos de los sistemas del ensamble es \cite{mandl1988statistical}:
+
+Así, la entropía dentro de unos de los sistemas del ensamble es \cite{mandl1988statistical}:
 
 \begin{equation} \label{entrnvt}
-    S = k\beta U + kln(\mathcal{Z})
+    S = K\beta U + Kln(\mathcal{Z})
 \end{equation}
 
 Todas las propiedades termodinámicas se obtienen de la función de partición canónica como se muestra en las ecuaciones (\ref{energcan}) (\ref{ecestacan}).
@@ -135,7 +152,7 @@ Todas las propiedades termodinámicas se obtienen de la función de partición c
     PV=KTln(\mathcal{Z})
 \end{equation}
 
-El potencial termodinámico del ensamble canónico es la energía libre de Helmholtz que es la siguiente ecuación:
+El potencial termodinámico del ensamble canónico es la energía libre de Helmholtz:
 
 \begin{equation} \label{potHelm}
     F(N,V,T)=-\frac{1}{\beta}ln(\mathcal{Z})=U-TS
@@ -143,9 +160,10 @@ El potencial termodinámico del ensamble canónico es la energía libre de Helmh
 
 \subsection{Ensamble isotérmico-isobárico NPT}
 
-Este ensamble es importante ya que los datos experimentales de propiedades en fase condensada se encuentran a condiciones de presión y temperatura constante.\\
-
 El ensamble NPT esta formado por $\mathcal{N}$ copias de un sistema en equilibrio con N partículas, una fuente de calor a temperatura T y esta acoplado a un pistón isotrópico que se comprime o expande en respuesta a fluctuaciones instantáneas de la presión interna (fuente de volumen). Los $\mathcal{N}$ sistemas de este ensamble estan en contacto entre si por paredes diatérmicas y flexibles, es decir, para cada sistema en este ensamble, el resto es su fuente de calor y de volumen como se muestra en la figura \ref{fig:NPTEns}.\\
+
+Este ensamble es importante porque los datos experimentales de propiedades en fase condensada se encuentran a condiciones de presión y temperatura constante.\\
+
 
 \begin{figure}[!h]
     \centering
@@ -184,7 +202,7 @@ Lo anterior debe cumplir con las ecuaciones (\ref{restrprobNPT})-(\ref{volprobNP
     con $P_{rn} = \frac{N_{rn}}{\mathcal{N}}$
 \end{center}
 
-El número de formas de microestados correspondientes en que se presenta esta distribución es:\\
+El número de formas de microestados correspondientes en que se presenta esta distribución es:\\ \textcolor{red}{Referir a la explicación que dé en el ensamble anterior}
 
 \begin{equation} \label{distribucionmultnom}
     \Omega = \frac{\mathcal{N}!}{\prod_{rn} N_{rn}}
@@ -258,7 +276,7 @@ Adicionalmente, para el lagrangiano $L$ de la ecuación \ref{lagrangiano}, el ha
     H(\vec{p},\vec{q}) = E = \sum_{i=1}^{N} \frac{1}{2 m_i}\vec{p_i}^2 + \sum_{i=1}^{N-1}\sum_{j=i+1}^{N} u(r_{ij})
 \end{equation}\\
 
-donde $u(r_{ij})$ es una energia potencial entre pares que depende unicamente de la distancia entre estas y $\vec{p_i}$ es el momento lineal que se denota por (\ref{momlin}).
+donde $u(r_{ij})$ es una energía potencial entre pares que depende únicamente de la distancia entre estas y $\vec{p_i}$ es el momento lineal que se denota por (\ref{momlin}).
 
 \begin{equation}\label{momlin}
     \vec{p_i} = m\dot{\vec{r_i}}
@@ -270,7 +288,7 @@ En el límite termodinámico las sumas en las funciones de partición se vuelven
     \mathcal{Z} = \frac{1}{N!h^{3N}}\int ...\int e^{-\beta H(\vec{r},\vec{p})}dx_1dy_1dz_1dp_{x_1}dp_{y_1}...dy_N dz_Ndp_{x_N}dp_{y_N}dp_{z_N}.
 \end{equation}\\
 
-Sustituyendo la ecuación \ref{hamiltoniano} en la ecuación \ref{funcpartclas}\cite{feynman1972statistical}:
+Sustituyendo la ecuación (\ref{hamiltoniano}) en la ecuación (\ref{funcpartclas}) \cite{feynman1972statistical}:
 
 \begin{equation} \label{funcpartclasconfig}
     \mathcal{Z} = \frac{1}{N!}\left( \frac{2\pi m}{\beta h^2} \right)^{3N/2}Z_N,\quad con\ Z_N = \int e^{-\beta \mathcal{V}}dx_1dy_1dz_1...dx_N dy_N dz_N
@@ -284,9 +302,9 @@ Interacciones intermoleculares y se agregue una breve descripción de interaccio
 
 \section{Interacciones intermoleculares}
 
-Las interacciones de Van der waals son interacciones atractivas que ocurren cuando las nubes electrónicas de los átomos están muy cerca (orden de angstroms), sin embargo se repelen fuertemente una vez que están extremadamente cerca para evitar traslapes de nubes electrónicas.\\
+Las interacciones de Van der waals son interacciones atractivas causadas por las nubes electrónicas de los átomos cuando están a distancias del orden de angstroms, sin embargo, se repelen fuertemente cuando se encuentran extremadamente cerca para evitar traslapes de nubes electrónicas (exclusión de pauli).\\
 
-Estas interacciones dependen de la distancia a la 6ta potencia y son débiles enérgicamente en comparación con la energía cinética de una molécula en una solución \cite{201753}. La fuerza de Van der waals tiene tres variantes \cite{ROY20151}:
+Estas interacciones dependen de la distancia a la 6ta potencia y son débiles enérgicamente en comparación con la energía cinética de una molécula en una solución \cite{201753}. La fuerza de Van der waals tiene tres variantes \cite{ROY20151}: \textcolor{red}{Checar citas aquí ya que no coinciden con la información que informo} \textcolor{blue}{En la página 11 se presenta un resumen de una página sobre las tres fuerzas y la interacción de van der waals}
 
 \begin{itemize}
     \item Fuerza Keesom: Fuerza de atracción entre dos dipolos permanentes.
@@ -326,7 +344,7 @@ Este potencial entre pares modela interacciones atractivas de Van der Waals y a 
 Este potencial esta dividido en tres intervalos en el eje $r$ \cite{ADAMS2001763}:
 
 \begin{itemize}
-    \item El primer intervalo es el potencial repulsivo que esta antes de la linea roja en la figura \ref{fig:LJ126}, este es para evitar el traslape de nubes electrónicas (Principio de exclusión de pauli).
+    \item El primer intervalo es el potencial repulsivo que está antes de la linea roja en la figura \ref{fig:LJ126}, este es para evitar el traslape de nubes electrónicas (Principio de exclusión de pauli).
     \item El pozo del potencial es debido a la cohesión en la fase condensada de la materia.
     \item La parte atractiva de este potencial es causada por la interacción de van der waals.
 \end{itemize}
@@ -338,7 +356,8 @@ Este potencial esta dividido en tres intervalos en el eje $r$ \cite{ADAMS2001763
 
 \section{Estructura de los nanotubos de carbono}
 
-En la simulación presentada se usó un nanotubo de carbono de una capa (SWCNT por sus siglas en ingles), por lo que es necesario explicar características, geometría y algunas propiedades de estos nanomateriales.\\
+% En la simulación presentada se usó un nanotubo de carbono de una capa (SWCNT por sus siglas en ingles), por lo que es necesario explicar características, geometría y algunas propiedades de estos nanomateriales.\\
+Los nanotubos de carbonos son una sabana de un arreglo hexagonal de carbono enrollados en un eje para formar un cilindro, fueron descubiertos por Iijima en experimentos usando el método de arco de descarga en 1991 \cite{Iijima1991}.\\
 
 \begin{table}[h!]
     \centering
@@ -359,7 +378,6 @@ En la simulación presentada se usó un nanotubo de carbono de una capa (SWCNT p
     \label{carbono}
 \end{table}
 
-Los nanotubos de carbonos son una sabana de un arreglo hexagonal de carbono enrollados en un eje para formar un cilindro, fueron descubiertos por Iijima en experimentos usando el método de arco de descarga en 1991 \cite{Iijima1991}.\\
 
 \section{Geometría y notación (n,m)}
 
@@ -379,12 +397,12 @@ Los nanotubos de carbonos son una sabana de un arreglo hexagonal de carbono enro
 La geometría se puede describir usando los vectores $\vec{a_1}$ y $\vec{a_2}$ por convención están arreglados como se muestra en las figuras [2.1]. Usando estos podemos describir las siguientes características \cite{Melendez2016}:\\
 
 \begin{itemize}
-    \item Vector chiral (n,m): $C_h = n\vec{a_1} + m\vec{a_2}$
-    \item Magnitud del vector chiral: $\left|C_h\right| = \sqrt{3}a_{cc}\sqrt{n^2+m^2+nm}$
+    \item Vector quiral (n,m): $C_h = n\vec{a_1} + m\vec{a_2}$
+    \item Magnitud del vector quiral: $\left|C_h\right| = \sqrt{3}a_{cc}\sqrt{n^2+m^2+nm}$
     \item Diámetro del nanotubo: $d_T = \left|C_h\right|/\pi$
 \end{itemize}
 
-El vector de traslación $\vec{T}$ es el vector mas corto perpendicular a $C_h$ que empieza y termina en un punto del arreglo hexagonal:
+El vector de traslación $\vec{T}$ es el vector más corto perpendicular a $C_h$ que empieza y termina en un punto del arreglo hexagonal:
 
 \begin{itemize}
     \item Vector de traslación: $\vec{T} = \left[\left(2m+n\right)\vec{a_1} - \left(2n+m\right)\vec{a_2}\right]/d_R$
@@ -406,7 +424,7 @@ Los nanotubos están categorizados por su notación (n,m) \cite{Melendez2016}:
 \begin{itemize}
     \item Armchair: (n,n) $\left|C_h\right|=3na_{cc}$ y $\left|\vec{T}\right|=\sqrt{3}a_{cc}$
     \item Zigzag: (n,0) $\left|C_h\right|=\sqrt{3}na_{cc}$ y $\left|\vec{T}\right|=3a_{cc}$
-    \item Chiral: (n,m) where 0 < m < n
+    \item Quiral: (n,m) where 0 < m < n
 \end{itemize}
 
 Para un SWCNT (n,m), si n = m el nanotubo es metálico; si n - m es múltiplo de 3, el nanotubo es casi-metálico, de otra manera el nanotubo es un semiconductor. En la figura [2.1] los puntos rojos representan los nanotubos metálicos y los círculos negros representan los semiconductores.\\
