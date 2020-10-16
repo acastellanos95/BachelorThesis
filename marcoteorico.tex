@@ -436,9 +436,9 @@ Lo anterior asegura que la notación (n,m) define completamente la estructura de
 \chapter{Dinámica molecular}
 \endgroup
 
-La imposibilidad de usar la mecánica estadística como método para estudiar fluidos interactuantes y con la llegada de la alta capacidad de procesamiento computacional dio lugar a la posibilidad de usar la aproximación Born-Oppenheimer(aproximación para escribir el hamiltoniano en términos de sus interacciones nucleares donde sus movimientos de electrones han sido promediados) para resolver las ecuaciones de movimiento de Newton para sistemas atómicos. \\
+La imposibilidad de hacer cálculos manuales de la mecánica estadística como método para estudiar fluidos interactuantes y con la llegada de la alta capacidad de procesamiento computacional dio lugar a la posibilidad de usar la aproximación Born-Oppenheimer(aproximación para escribir el hamiltoniano en términos de sus interacciones nucleares donde sus movimientos de electrones han sido promediados) para resolver las ecuaciones de movimiento de Newton para sistemas atómicos. \\
 
-La simulación conecta los resultados experimentales con los modelos de simulación y viceversa mediante las propiedades termodinámicas del sistema, y estructuralmente usando la función de distribución radial. La simulación molecular de un sistema nos permite declarar detalles microscópicos como geometrías, masas, interacciones y demas; lo cual es una ruta directa a las propiedades macroscópicas de interés.\\
+La simulación conecta los resultados experimentales con los modelos de simulación y viceversa, mediante las propiedades termodinámicas del sistema. La simulación molecular de un sistema nos permite introducir detalles microscópicos de los átomos y moléculas como geometrías, masas, interacciones entre ellas, etc.\\
 
 
 \begin{figure}[!h]
@@ -450,7 +450,7 @@ La simulación conecta los resultados experimentales con los modelos de simulaci
 
 \section{Fundamentos de dinámica molecular}
 
-La dinámica molecular resuelve las ecuaciones de movimiento descritas en la sección \ref{MecClasNpart} para un sistema atómico, molecular o centros de masa de configuraciones moleculares. Las ecuaciones de hamilton para el hamiltoniano en la ecuación \ref{hamiltoniano} son:\\
+La dinámica molecular resuelve las ecuaciones de movimiento descritas en la sección \ref{MecClasNpart} para un sistema atómico, molecular o centros de masa de configuraciones moleculares. Las ecuaciones de hamilton para el hamiltoniano en la ecuación (\ref{hamiltoniano}) son:\\
 
 \begin{equation}
     \mathbf{r}_i = \mathbf{p}_i/m_i \\
@@ -467,9 +467,9 @@ Sin embargo, una ventaja de la convención lagrangiana es la posibilidad de inco
 
 \section{Métodos de diferencia finitas}
 
-La solución de las ecuaciones de movimiento se pueden resolver numéricamente por computadora con métodos de diferencias finitas. Existen diferentes algoritmos que son computacionalmente eficientes, sin embargo también es importante remediar dificultades como el error que puede insertar el calculo de números de punto flotante que usa la computadora y que esto pueda diferir en nuestros objetivos físicos(e.g no conservar eficientemente la energía). En la actualidad estos problemas son menos importantes por la capacidad de cómputo que existe y la gran cantidad de estudios y optimizaciones en este tema pero no por eso deben ignorarse en la simulación.\\
+La solución de las ecuaciones de movimiento se pueden resolver numéricamente por computadora con métodos de diferencias finitas. Existen diferentes algoritmos que son computacionalmente eficientes.\\
 
-Los algoritmos de integración usados en dinámica molecular son relativamente sencillos de derivar. Primero, hagamos una expansión de McLaurin de la posición, velocidad y aceleración alrededor del paso $\delta t$:
+Los algoritmos de integración usados en este trabajo son sencillos de derivar. Primero, se realiza una expansión de McLaurin de la posición, velocidad y aceleración alrededor del paso $\delta t$:
 
 \begin{align} \label{taylorexpr}
 \begin{split}
@@ -519,7 +519,15 @@ Sustituyendo las ecuaciones (\ref{verletv1/2}) y (\ref{taylorexpa}) en la ecuaci
 \end{split}
 \end{align}
 
-El algoritmo empieza calculando la ecuación (\ref{verletv1/2}) el resultado del cálculo pasa a la ecuación (\ref{verletr}) y para calcular la última ecuación (\ref{verletv}) computamos las fuerzas sobre la partícula para obtener la aceleración en $t + \delta t$.
+Pasos del algoritmo:
+
+\begin{enumerate}
+    \item Calcular la ecuación (\ref{verletv1/2}).
+    \item Con el resultado del paso anterior, calcular la ecuación (\ref{verletr}).
+    \item Computar las fuerzas sobre la partícula para obtener la aceleración en $t + \delta t$.
+    \item $t = t + \delta t$
+    \item Regresamos al primer paso
+\end{enumerate}
 
 También si se quiere obtener la energía cinética se deriva la siguiente formula de la velocidad usando (\ref{taylorexpv}) y (\ref{taylorexpr-}):
 
@@ -529,7 +537,7 @@ También si se quiere obtener la energía cinética se deriva la siguiente formu
 
 \subsection{Algoritmo salto de rana(leap frog scheme)}
 
-Otra alternativa del algoritmo de Verlet es una que se deriva de este \cite{Allen2017}:\\
+Otra alternativa del algoritmo de Verlet es \cite{Allen2017}:\\
 
 \begin{equation} \label{leapfrogv1/2}
     \mathbf{v}(t + \frac{1}{2}\delta t)=\mathbf{v}(t - \frac{1}{2}\delta t)+\delta t\mathbf{a}(t)
@@ -539,11 +547,21 @@ Otra alternativa del algoritmo de Verlet es una que se deriva de este \cite{Alle
     \mathbf{r}(t + \delta t)= \mathbf{r}(t)+\delta t \mathbf{v}(t+\frac{1}{2}\delta t)
 \end{equation}
 
+\textcolor{red}{Agregar pasos del algoritmo de salto de rana bien expicados}
+
+\begin{enumerate}
+    \item Calcular la ecuación (\ref{verletv1/2}).
+    \item Con el resultado del paso anterior, calcular la ecuación (\ref{verletr}).
+    \item Computar las fuerzas sobre la partícula para obtener la aceleración en $t + \delta t$.
+    \item $t = t + \delta t$
+    \item Regresamos al primer paso
+\end{enumerate}
+
 Se almacena en memoria $\mathbf{r}(t)$, $\mathbf{v}(t - \frac{1}{2}\delta t)$ y computamos fuerzas para obtener $\mathbf{a}(t)$, con estos resultados en memoria podemos empezar calculando la ecuación (\ref{leapfrogv1/2}) para usarlo en la ecuación (\ref{leapfrogr}).
 
 \section{Condiciones de frontera periódicas y convención de minima imagen}
 
-Supongamos un cubo de simulación de longitud L, si se deseara realizar una simulación del sistema se necesitaría establecer la interacción molécula-pared. Para evitar estas paredes, empleamos condiciones de frontera periódicas, i.e. cuando una partícula deja el cubo, su imagen entra por la cara opuesta como en la figura \ref{fig:PBC}
+Supongamos un cubo de simulación de longitud L, si se deseara realizar una simulación del sistema se necesitaría establecer la interacción molécula-pared. Para evitar estas interacciones empleamos condiciones de frontera periódicas: cuando una partícula deja el cubo, su imagen entra por la cara opuesta como en la figura \ref{fig:PBC}
 
 \begin{figure}[!h]
     \centering
@@ -552,9 +570,9 @@ Supongamos un cubo de simulación de longitud L, si se deseara realizar una simu
     \label{fig:PBC}
 \end{figure}
 
-Las condiciones de frontera periódicas simulan la presencia de un bulto. El problema de usar estas condiciones es que al calcular el potencial o la fuerza entre pares se podría tomar en cuenta la fuerza de si misma, esto esta prohibido evidentemente por la ecuación (\ref{hamiltoniano}).
+Las condiciones de frontera periódicas simulan la presencia de un bulto. El problema de usar estas condiciones es que al calcular el potencial o la fuerza entre pares se podría tomar en cuenta la fuerza de si misma, esto esta prohibido por la ecuación (\ref{hamiltoniano}).
 
-Para evitar este problema truncamos el radio de los potenciales que sean menor o igual que la mitad de la longitud del cubo:
+Para evitar este problema, truncamos el radio de los potenciales que sean menor o igual que la mitad de la longitud del cubo:
 
 \begin{equation}\label{MIC}
     U(\mathbf{r}_{ij}) =
@@ -566,7 +584,7 @@ Para evitar este problema truncamos el radio de los potenciales que sean menor o
 
 \section{Termostato de Nose-Hoover}
 
-El termostato de Nose-Hoover es cercano a un verdadero ensamble canónico, nose y hoover extendieron el hamiltoniano del sistema introduciendo un baño térmico y un término de fricción a las ecuaciones de movimiento. La fricción es proporcional al producto de la velocidad de cada partícula y un parámetro de fricción $\xi$(esta es una cantidad dinámica con su propio momento $p_\xi$). Las ecuaciones de movimiento son reemplazadas por \cite{evans1985} \cite{gromacsdoc}:\\
+El termostato de Nosé-Hoover es el mas cercano a un verdadero ensamble canónico, Nosé y Hoover extendieron el hamiltoniano del sistema introduciendo un baño térmico y un término de fricción a las ecuaciones de movimiento. La fricción es proporcional al producto de la velocidad de cada partícula y un parámetro de fricción $\xi$(esta es una cantidad dinámica con su propio momento $p_\xi$). Las ecuaciones de movimiento son reemplazadas por \cite{evans1985} \cite{gromacsdoc}:\\
 
 \begin{equation} \label{NHmotion}
     \frac{d^2\mathbf{r}_i}{dt^2} = \frac{\mathbf{F}_i}{m_i}-\frac{p_\xi}{Q}\frac{d\mathbf{r}_i}{dt}
@@ -590,15 +608,15 @@ La cantidad conservada para las ecuaciones de Nose-Hoover es:\\
 
 El termostato de Nose-Hoover permite una relajación oscilatoria a la temperatura de referencia por lo que tarda mas tiempo que otros termostatos en llegar a la temperatura de referencia.\\
 
-\section{Barostato de Parrinello-Rahman}
+\section{Barostato de Parrinello-Rahman}\textcolor{red}{checar con detenimiento y pensar si separar en barostato y termostato, unirlos con el algoritmo MTK}
 
 Este barostato nos da un verdadero ensamble NPT. Con el barostato los vectores de la caja estan representados por $\mathbf{b}$ y obedecen la ecuación de movimiento matricial\cite{gromacsdoc} \cite{simone1993}:\\
 
 \begin{equation} \label{parrrahman}
-    \frac{d\mathbf{b}^2}{dt^2}=V\mathbf{W}^{-1}b'^{-1}(\mathbf{P}-\mathbf{P}_{ref})
+    \frac{d\mathbf{b}^2}{dt^2}=V\mathbf{W}^{-1}\mathbf{b'}^{-1}(\mathbf{P}-\mathbf{P}_{ref})
 \end{equation}\\
 
-El volumen de la caja es $V$, $\mathbf{W}$ es la matriz de parámetros del piston y las matrices $\mathbf{P},\mathbf{P}_{ref}$ es la presión instantánea y la presión de referencia respectivamente. Este barostato comunmente se usa en combinación con el termostato Nose-Hoover. Asi las ecuaciones de movimiento y la cantidad conservada $\mathcal{H}$ es \cite{gromacsdoc}:
+El volumen de la caja es $V$, $\mathbf{W}$ es la matriz de parámetros que determina la fuerza de acoplamiento y las matrices $\mathbf{P},\mathbf{P}_{ref}$ es la presión instantánea y la presión de referencia respectivamente. Este barostato comunmente se usa en combinación con el termostato Nose-Hoover. Asi las ecuaciones de movimiento y la cantidad conservada $\mathcal{H}$ es \cite{gromacsdoc}:
 
 \begin{equation} \label{NHPRmotionr}
     \frac{d^2\mathbf{r}_i}{dt^2} = \frac{\mathbf{F}_i}{m_i}-\frac{p_\xi}{Q}\frac{d\mathbf{r}_i}{dt} + \frac{\mathbf{r}_i}{dV}\left(\ddot{V}-\frac{2\dot{V}}{V}\right)
@@ -616,12 +634,12 @@ con $\mathbf{W}^{-1}_{ij}=\frac{4\pi^2 \beta_{ij}}{3\tau_{p}^2 L}$ y L la longit
 
 Los campos de fuerzas en una simulación es la energía potencial entre pares que obedecerá el sistema cuando se realicen cálculos de fuerzas. Existen muchos tipos de energías potenciales de interacción entre pares utilizados en la dinámica molecular. Este proceso es parte de la modelación del sistema y es importante para reproducir resultados experimentales. Comúnmente un campo de fuerzas tipo I es como el siguiente:
 
-\begin{align}\label{FF}
+\begin{align*}\label{FF}
     U_{conf} &= \sum_{enlaces}K_r\left(r-r_0\right)^2 + \sum_{angulos}K_{\theta}\left(\theta-\theta_0\right)^2 \\
              &+ \sum_{diedros}K_{\phi}\left[1-cos(n\phi-\delta)\right] \\
              &+ \sum_{diedros\ impropios}K_{\omega}\left(\omega-\omega_0\right)^2 + \sum_{cargas}\left(\frac{q_i q_j}{4\pi \epsilon r^2_{ij}}\right) \\
              &+ \sum_{VdW} 4 \epsilon_{ij}\left[\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{12}-\left(\frac{\sigma_{ij}}{r_{ij}}\right)^{6}\right]    
-\end{align}
+\end{align*}
 
 La siguiente tabla \ref{FFallen} muestra otros campos de fuerzas:
 
