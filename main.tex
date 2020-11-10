@@ -16,11 +16,19 @@
 
 
 \usepackage[T1]{fontenc}		   %%% fonts y unicode UTF8
-\usepackage[utf8]{inputenc}        
+\usepackage[utf8]{inputenc}  
+\usepackage[spanish]{babel}
+% \usepackage[fixlanguage]{babelbib}
+% \usepackage[backend=bibtex,style=numeric]{biblatex}
+\usepackage[backend=biber,style=draft]{biblatex}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{csquotes}
+% \usepackage{url}
+\addbibresource{tesis.bib}
 
 
 % Cualquier paquete necesario debe ser incluido aquí.
@@ -28,7 +36,7 @@
 % babel, latexsym, fancyhdr, graphicx y array
 
 \author{André Fabián Castellanos Aldama}                  % Nombre del autor
-\title{Dinámica molecular de nanotubos en agua (considerar modificar el título cuando tengamos los resultados escritos )}         % Título de la tesis
+\title{Arrastre de herbicida 2,4-D en agua usando nanotubos de carbono (6,5) (considerar modificar el título cuando tengamos los resultados escritos )}         % Título de la tesis
 \asesor{Dra. Minerva González Melchor}               % Nombre del asesor
 \presidente{Horoscopista Fernando} % Nombre del presidente del jurado
 \secretario{Homeópata Pérez}       % Nombre del secretario del jurado
@@ -47,7 +55,7 @@
 
 \begin{document}
 \frontmatter
-           %\portada         %----quitar comentario en la versión final
+           \portada         %----quitar comentario en la versión final
            \maketitle       %----quitar comentario en la versión final
            \makeacta        %----quitar comentario en la versión final
            \setcounter{page}{4}		% La primer página con número impreso
@@ -75,8 +83,11 @@
 
 \backmatter  % En esta línea está terminado el trabajo. No quitar
 \addcontentsline{toc}{chapter}{Bibliografía} % Agregar Bibliografía al índice
-\bibliographystyle{ieeetr}
-\bibliography{tesis}      % Para utilizar con BibTeX y con un archivo tesis.bib
+\selectlanguage{spanish}
+\printbibliography
+% \selectbiblanguage{spanish}
+% \bibliographystyle{bababbr3}
+% \bibliography{tesis}      % Para utilizar con BibTeX y con un archivo tesis.bib
 %\begin{thebibliography}{XX} % Por si alguien no quiere utilizar BibTeX
 %\end{thebibliography}
 \end{document}            % Fin del documento. cualquier texto a partir de esta

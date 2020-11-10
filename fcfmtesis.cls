@@ -131,7 +131,7 @@
     		\vskip 1em%
     		{\Large \colegio \par}%
     		\vskip 1em%
-    		{\Large como requisito parcial para la obtenci\'on del  grado de \par}%
+    		{\Large como requisito parcial para la obtenci\'on del título de \par}%
     		\vskip 1em%
     		{\Large \grado \par}%
     		\vskip 1em%
@@ -139,7 +139,7 @@
     		\vskip 1em%
     		{\Large \@author \par}%
             \vskip 3em%
-            {\Large \@asesorad\par}%
+            {\Large Directora de Tesis}%
             \vskip 2em%
             {\Large \@asesor \par}%
     		\vskip 3em%
@@ -183,7 +183,7 @@
     		\vskip 1em%
     		{\Large \colegio \par}%
     		\vskip 1em%
-    		{\Large como requisito parcial para la obtenci\'on del  grado de \par}%
+    		{\Large como requisito parcial para la obtenci\'on del título de \par}%
     		\vskip 1em%
     		{\Large \grado \par}%
     		\vskip 1em%
@@ -191,7 +191,7 @@
     		\vskip 1em%
     		{\Large \@author \par}%
             \vskip 3em%
-            {\Large \@asesorad\par}%
+            {\Large Directora de Tesis}%
             \vskip 2em%
             {\Large \@asesor \par}% 
 			\vskip 3em%

@@ -103,6 +103,21 @@ doi = {10.1007/978-981-10-3545-6}
 
 %articulo dinamica molecular
 
+@article{LEVINE20113556,
+title = "Fast analysis of molecular dynamics trajectories with graphics processing units—Radial distribution function histogramming",
+journal = "Journal of Computational Physics",
+volume = "230",
+number = "9",
+pages = "3556 - 3569",
+year = "2011",
+issn = "0021-9991",
+doi = "https://doi.org/10.1016/j.jcp.2011.01.048",
+url = "http://www.sciencedirect.com/science/article/pii/S0021999111000829",
+author = "Benjamin G. Levine and John E. Stone and Axel Kohlmeyer",
+keywords = "Pair distribution function, Two-point correlation function, GPGPU",
+abstract = "The calculation of radial distribution functions (RDFs) from molecular dynamics trajectory data is a common and computationally expensive analysis task. The rate limiting step in the calculation of the RDF is building a histogram of the distance between atom pairs in each trajectory frame. Here we present an implementation of this histogramming scheme for multiple graphics processing units (GPUs). The algorithm features a tiling scheme to maximize the reuse of data at the fastest levels of the GPU’s memory hierarchy and dynamic load balancing to allow high performance on heterogeneous configurations of GPUs. Several versions of the RDF algorithm are presented, utilizing the specific hardware features found on different generations of GPUs. We take advantage of larger shared memory and atomic memory operations available on state-of-the-art GPUs to accelerate the code significantly. The use of atomic memory operations allows the fast, limited-capacity on-chip memory to be used much more efficiently, resulting in a fivefold increase in performance compared to the version of the algorithm without atomic operations. The ultimate version of the algorithm running in parallel on four NVIDIA GeForce GTX 480 (Fermi) GPUs was found to be 92 times faster than a multithreaded implementation running on an Intel Xeon 5550 CPU. On this multi-GPU hardware, the RDF between two selections of 1,000,000 atoms each can be calculated in 26.9s per frame. The multi-GPU RDF algorithms described here are implemented in VMD, a widely used and freely available software package for molecular dynamics visualization and analysis."
+}
+
 @article{doi:10.1063/1.442716,
 author = {Swope,William C.  and Andersen,Hans C.  and Berens,Peter H.  and Wilson,Kent R. },
 title = {A computer simulation method for the calculation of equilibrium constants for the formation of physical clusters of molecules: Application to small water clusters},
@@ -116,8 +131,15 @@ URL = {https://doi.org/10.1063/1.442716},
 eprint = {https://doi.org/10.1063/1.442716}
 }
 
+@online{charmmgui,
+  organization = {Lehigh University},
+  title = {CHARMM-GUI},
+  url = {http://www.charmm-gui.org/},
+  year={2020}
+}
+
 @article{evans1985,
-author = {Evans,D. J.  and Holian,B. L. },
+author = {Evans,D. J. Holian,B. L. },
 title = {The Nose–Hoover thermostat},
 journal = {The Journal of Chemical Physics},
 volume = {83},
@@ -189,7 +211,83 @@ abstract = "Publisher Summary
 This chapter discusses covalent and Coulomb interactions as the strong forces operating within molecules. Covalent forces tightly bind the atoms together within the molecule. They are of short range, that is, they operate over very short distances of the order of interatomic separations. Covalently bonded atoms make up molecules and crystals with well-defined structures that cannot normally melt or liquify without totally breaking the bonds. They tend to sublimate, decompose, or undergo a chemical reaction above some temperature rather than going through the conventional solid-liquid-gas states that are characteristic of physically bonded molecules. This chapter starts with a discussion on covalent or chemical bonding forces, and the differences between physical and chemical bonds. The chapter then explains Coulomb forces (charge–charge interactions). Concepts of ionic crystals and reference states are explained. The chapter gives detailed discussion on the Born energy as well as solubility of ions in different solvents. The chapter concludes with presenting computer simulations and integral equations of many-body systems."
 }
 
+@Article{Soper2013,
+author={Soper, A. K.},
+title={The Radial Distribution Functions of Water as Derived from Radiation Total Scattering Experiments: Is There Anything We Can Say for Sure?},
+journal={ISRN Physical Chemistry},
+year={2013},
+month={Feb},
+day={26},
+publisher={Hindawi Publishing Corporation},
+volume={2013},
+pages={279463},
+abstract={The present paper reviews the investigation of ambient water structure and focusses in particular on the determination of the radial distribution functions of water from total experimental radiationscattering experiments. A novel method for removing the inelastic scattering from neutron data is introduced, and the effect of Compton scattering on X-ray data is discussed. In addition the extent to which quantum effects can be discerned between heavy and light water is analysed against these more recent data. It is concluded that, with the help of modern data analysis and computer simulation tools to interrogate the scattering data, a considerable degree of consistency can be obtained between recent and past scattering experiments on water. That consistency also gives a realistic estimate of the likely uncertainties in the extracted radial distribution functions, as well as offering a benchmark against which future experiments can be judged.},
+doi={10.1155/2013/279463},
+url={https://doi.org/10.1155/2013/279463}
+}
+
+@Article{vega2005,
+author ="Vega, Carlos and McBride, Carl and Sanz, Eduardo and Abascal, Jose L. F.",
+title  ="Radial distribution functions and densities for the SPC/E{,} TIP4P and TIP5P models for liquid water and ices Ih{,} Ic{,} II{,} III{,} IV{,} V{,} VI{,} VII{,} VIII{,} IX{,} XI and XII",
+journal  ="Phys. Chem. Chem. Phys.",
+year  ="2005",
+volume  ="7",
+issue  ="7",
+pages  ="1450-1456",
+publisher  ="The Royal Society of Chemistry",
+doi  ="10.1039/B418934E",
+url  ="http://dx.doi.org/10.1039/B418934E"
+}
+
+@incollection{GOCHENOUR201841,
+title = "Chapter 2 - Molecular Simulations of Volatile Organic Interfaces",
+editor = "Jennifer A. Faust and James E. House",
+booktitle = "Physical Chemistry of Gas-Liquid Interfaces",
+publisher = "Elsevier",
+pages = "41 - 58",
+year = "2018",
+series = "Developments in Physical & Theoretical Chemistry",
+isbn = "978-0-12-813641-6",
+doi = "https://doi.org/10.1016/B978-0-12-813641-6.00002-9",
+url = "http://www.sciencedirect.com/science/article/pii/B9780128136416000029",
+author = "Kevin Gochenour and Alexanndra J. Heyert and Gerrick E. Lindberg",
+keywords = "Benzene, Cyclohexane, Instantaneous interface, Molecular dynamics simulations, Thermodynamics of interfaces, Volatile organic interfaces",
+abstract = "Volatile organic liquids are commonly classified by bulk thermodynamic properties, such as vapor pressure, surface tension, and contact angle. Such a coarse description of interfaces does not capture molecular features of their behavior and makes linking molecular characteristics to observed properties challenging. In this chapter, we review how computational molecular dynamics simulations can be used to probe molecular features of volatile liquid–vapor interfaces. As a test case, we examine the liquid–vapor interface formed by various mixtures of benzene and cyclohexane."
+}
+
 %Articulos nanotubos
+@Article{Iijima1991,
+author={Iijima, Sumio},
+title={Helical microtubules of graphitic carbon},
+journal={Nature},
+year={1991},
+volume={354},
+number={6348},
+pages={56-58},
+abstract={THE synthesis of molecular carbon structures in the form of C60 and other fullerenes1 has stimulated intense interest in the structures accessible to graphitic carbon sheets. Here I report the preparation of a new type of finite carbon structure consisting of needle-like tubes. Produced using an arc-discharge evaporation method similar to that used for fullerene synthesis, the needles grow at the negative end of the electrode used for the arc discharge. Electron microscopy reveals that each needle comprises coaxial tubes of graphitic sheets, ranging in number from 2 up to about 50. On each tube the  carbon-atom hexagons are arranged in a helical fashion about the needle axis. The helical pitch varies from needle to needle and from tube to tube  within a single needle. It appears that this helical structure may aid the growth process. The formation of these needles, ranging from a few to a few tens of nanometres in diameter, suggests that engineering of carbon structures should be possible on scales considerably greater than those relevant to the fullerenes.},
+issn={1476-4687},
+doi={10.1038/354056a0},
+url={https://doi.org/10.1038/354056a0}
+}
+
+@online{ShigeoChiral,
+  author = {Maruyama Shigeo},
+  title = {Chirality and symmetry of Nanotube},
+  url = {http://www.photon.t.u-tokyo.ac.jp/~maruyama/kataura/chirality.html},
+  year = {2020}
+}
+
+@article{meng2008,
+author = {Meng,Lingyi  and Li,Qikai  and Shuai,Zhigang },
+title = {Effects of size constraint on water filling process in nanotube},
+journal = {The Journal of Chemical Physics},
+volume = {128},
+number = {13},
+pages = {134703},
+year = {2008},
+doi = {10.1063/1.2883655},
+URL = {https://doi.org/10.1063/1.2883655},
+}
 
 @article{HILDER2008258,
 title = {Carbon nanotubes as drug delivery nanocapsules},
@@ -212,6 +310,66 @@ volume  ={3},
 issue  ={2},
 pages  ={203-212},
 publisher  ={The Royal Society of Chemistry}
+}
+
+﻿@Article{Iijima1993,
+author={Iijima, Sumio
+and Ichihashi, Toshinari},
+title={Single-shell carbon nanotubes of 1-nm diameter},
+journal={Nature},
+year={1993},
+month={Jun},
+day={01},
+volume={363},
+number={6430},
+pages={603-605},
+abstract={CARBON nanotubes1 are expected to have a wide variety of interesting properties. Capillarity in open tubes has already been demonstrated2--5, while predictions regarding their electronic structure6--8 and mechanical strength9 remain to be tested. To examine the properties of these structures, one needs tubes with well defined morphologies, length, thickness and a number of concentric shells; but the normal carbon-arc synthesis10,11 yields a range of tube types. In particular, most calculations have been concerned with single-shell tubes, whereas the carbon-arc synthesis produces almost entirely multi-shell tubes. Here we report the synthesis of abundant single-shell tubes with diameters of about one nanometre. Whereas the multi-shell nanotubes are formed on the carbon cathode, these single-shell tubes grow in the gas phase. Electron diffraction from a single tube allows us to confirm the helical arrangement of carbon hexagons deduced previously for multi-shell tubes1.},
+issn={1476-4687},
+doi={10.1038/363603a0},
+url={https://doi.org/10.1038/363603a0}
+}
+
+@Article{lee2016,
+author ="Lee, Joo Hyeong and Yoon, Chong S. and Hwang, Jang-Yeon and Kim, Sung-Jin and Maglia, Filippo and Lamp, Peter and Myung, Seung-Taek and Sun, Yang-Kook",
+title  ="High-energy-density lithium-ion battery using a carbon-nanotube–Si composite anode and a compositionally graded Li[Ni0.85Co0.05Mn0.10]O2 cathode",
+journal  ="Energy Environ. Sci.",
+year  ="2016",
+volume  ="9",
+issue  ="6",
+pages  ="2152-2158",
+publisher  ="The Royal Society of Chemistry",
+doi  ="10.1039/C6EE01134A",
+url  ="http://dx.doi.org/10.1039/C6EE01134A",
+abstract  ="A fully operational practical Li-rechargeable battery system delivering unprecedented high energy density with excellent cycle life was proposed using the state-of-the-art cathode and anode technologies. Based on the simple ball-milling process{,} a carbon nanotube (CNT)–Si composite anode with extremely stable long-term cycling{,} while providing a discharge capacity of 2364 mA h g−1 at a tap density of 1.103 g cm−3{,} was developed. For the cathode{,} a two-sloped full concentration gradient (TSFCG) Li[Ni0.85Co0.05Mn0.10]O2 cathode{,} designed to obtain maximum possible discharge capacity by having a Ni-enriched core and to simultaneously ensure high chemical and thermal stability by having an outer Mn-enriched layer{,} yielded a discharge capacity of 221 mA h g−1. Integrating the CNT–Si composite and the TSFCG cathode in a full cell configuration{,} the full cell generated an energy density of 350 W h kg−1 with excellent capacity retention for 500 cycles at 1 C rate{,} satisfying the energy density limit imposed by the drive range requirement for EVs. The proposed battery system satisfied the demands for energy storage for vehicle applications in terms of energy density{,} power and cycle life."}
+
+@incollection{KAUR2019,
+title = "Chapter 5 - Applications of Carbon Nanotubes in Drug Delivery: A Comprehensive Review",
+editor = "Shyam S. Mohapatra and Shivendu Ranjan and Nandita Dasgupta and Raghvendra Kumar Mishra and Sabu Thomas",
+booktitle = "Characterization and Biology of Nanomaterials for Drug Delivery",
+publisher = "Elsevier",
+pages = "113 - 135",
+year = "2019",
+series = "Micro and Nano Technologies",
+isbn = "978-0-12-814031-4",
+doi = "https://doi.org/10.1016/B978-0-12-814031-4.00005-2",
+url = "http://www.sciencedirect.com/science/article/pii/B9780128140314000052",
+author = "Jashandeep Kaur and Gurlal Singh Gill and Kiran Jeet",
+keywords = "Applications, Carbon nanotubes (CNTs), Drug delivery system, Functionalization, Multiwalled carbon nanotubes (MWCNTs), Properties, Single-walled carbon nanotubes (SWCNTs)",
+abstract = "Nano-based materials have turned out to be very promising in generating newer medical applications. Carbon nanotubes (CNTs) exhibit outstanding intrinsic physical and chemical properties that have been intensively explored for versatile applications in the past few years. Nanotubes are classified as single-walled and multiwalled nanotubes. There are various methods of production of CNTs such as arc discharge, laser ablation, chemical vapor deposition, flame synthesis method, and silane solution method. Parameters such as surface charge, size distribution, structure, surface area, surface chemistry, and agglomeration state, as well as purity of the samples, have a considerable role in the reactivity of CNTs. CNTs hold good for desired drug delivery systems for gene transfer, treatment of cancer, transdermal, and DNA applications. This chapter summarizes the drug delivery applications of CNTs. Additionally, a brief about production and properties of CNTs is also presented in this chapter."
+}
+
+@article{SARKAR2018,
+title = "Designer carbon nanotubes for contaminant removal in water and wastewater: A critical review",
+journal = "Science of The Total Environment",
+volume = "612",
+pages = "561 - 581",
+year = "2018",
+issn = "0048-9697",
+doi = "https://doi.org/10.1016/j.scitotenv.2017.08.132",
+url = "http://www.sciencedirect.com/science/article/pii/S0048969717321307",
+author = "Binoy Sarkar and Sanchita Mandal and Yiu Fai Tsang and Pawan Kumar and Ki-Hyun Kim and Yong Sik Ok",
+keywords = "Carbon nanotubes, Surface functionalization/modification, Contaminants, Environmental remediation, Soil remediation, Desalination",
+abstract = "The search for effective materials for environmental cleanup is a scientific and technological issue of paramount importance. Among various materials, carbon nanotubes (CNTs) possess unique physicochemical, electrical, and mechanical properties that make them suitable for potential applications as environmental adsorbents, sensors, membranes, and catalysts. Depending on the intended application and the chemical nature of the target contaminants, CNTs can be designed through specific functionalization or modification processes. Designer CNTs can remarkably enhance contaminant removal efficiency and facilitate nanomaterial recovery and regeneration. An increasing number of CNT-based materials have been used to treat diverse organic, inorganic, and biological contaminants. These success stories demonstrate their strong potential in practical applications, including wastewater purification and desalination. However, CNT-based technologies have not been broadly accepted for commercial use due to their prohibitive cost and the complex interactions of CNTs with other abiotic and biotic environmental components. This paper presents a critical review of the existing literature on the interaction of various contaminants with CNTs in water and soil environments. The preparation methods of various designer CNTs (surface functionalized and/or modified) and the functional relationships between their physicochemical characteristics and environmental uses are discussed. This review will also help to identify the research gaps that must be addressed for enhancing the commercial acceptance of CNTs in the environmental remediation industry."
 }
 
 %articulos mec estaditica
@@ -269,40 +427,6 @@ Realization of reliable bonding is the immutable requirement for adhesives. The 
    volume =    {},
 }
 
-%articulos nanotubos de carbono
-
-@Article{Iijima1991,
-author={Iijima, Sumio},
-title={Helical microtubules of graphitic carbon},
-journal={Nature},
-year={1991},
-volume={354},
-number={6348},
-pages={56-58},
-abstract={THE synthesis of molecular carbon structures in the form of C60 and other fullerenes1 has stimulated intense interest in the structures accessible to graphitic carbon sheets. Here I report the preparation of a new type of finite carbon structure consisting of needle-like tubes. Produced using an arc-discharge evaporation method similar to that used for fullerene synthesis, the needles grow at the negative end of the electrode used for the arc discharge. Electron microscopy reveals that each needle comprises coaxial tubes of graphitic sheets, ranging in number from 2 up to about 50. On each tube the  carbon-atom hexagons are arranged in a helical fashion about the needle axis. The helical pitch varies from needle to needle and from tube to tube  within a single needle. It appears that this helical structure may aid the growth process. The formation of these needles, ranging from a few to a few tens of nanometres in diameter, suggests that engineering of carbon structures should be possible on scales considerably greater than those relevant to the fullerenes.},
-issn={1476-4687},
-doi={10.1038/354056a0},
-url={https://doi.org/10.1038/354056a0}
-}
-
-@electronic{ShigeoChiral,
-  author = {Maruyama Shigeo},
-  title = {Chirality and symmetry of Nanotube},
-  url = {http://www.photon.t.u-tokyo.ac.jp/~maruyama/kataura/chirality.html},
-}
-
-@article{meng2008,
-author = {Meng,Lingyi  and Li,Qikai  and Shuai,Zhigang },
-title = {Effects of size constraint on water filling process in nanotube},
-journal = {The Journal of Chemical Physics},
-volume = {128},
-number = {13},
-pages = {134703},
-year = {2008},
-doi = {10.1063/1.2883655},
-URL = {https://doi.org/10.1063/1.2883655},
-}
-
 %libros mecánica teórica
 
 @book{torresdelcastillo_2018,
@@ -351,6 +475,14 @@ en Agua Superficial, Agua Subterránea y Suelo},
 journal = {Instituto Nacional de Ecología y Cambio Climático (INECC)},
 pages = {37},
 year = {2019}
+}
+
+@article{maguey2018,
+author = {Maguey, H},
+title = {La crisis que viene},
+journal = {Gaceta UNAM},
+pages = {4},
+year = {2018}
 }
 
 @Article{Nunes2019,

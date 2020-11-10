@@ -8,26 +8,46 @@
 %Ideas para presentación. Bien citada todas mis ideas, platicar sobre saneamiento de agua y usos de nanotubos de carbono. 
 \chapter{Introducción}
 
-El saneamiento del agua es un problema que incrementa junto con la población: en 2019 se usó alrededor de 2900$km^3$ de agua para agricultura \cite{un2020} a partir de esto, nuevos métodos y filosofías al respecto han derivado en múltiples innovaciones para atacar el problema como los siguientes: prevención de la contaminación de ríos; plantas de tratamiento de agua de bajo costo y demás.\\ 
+% \textcolor{red}{Reescrbir introduccion, ir de lo general a lo particular, hablar del agua contaminada, despues hablar sobre méxico y la contaminación 2,4-D, hablar sobre los antecedentes de remoción de 24D, hablar sobre nanotubos de carbono y su funcionalización, hablar sobre mec est, dinam. mol., al final hablar sobre la capitulación de la tesis}
 
-El incremento de la población provoca un incremento de cultivos para alimentación lo cual a su vez genera un crecimiento en el uso de herbicidas o químicos para maximizar la cosecha. Estos químicos usados terminan en el agua subterránea y superficial. En particular, en el río La Laja en Guanajuato se midió en el 2019 con una concentración máxima de 11.309 $\mu g / g$ en suelo y $\mu g / L$ en agua el herbicida 2,4D\cite{ineec2019}.\\
+En México el 70\% del consumo de agua total se usa en la agricultura \cite{maguey2018}. Adicionalmente, según INECC se han localizado 125 sitios con presencia de herbicidas en agua superficial, subterránea y en suelo \cite{ineec2019}. Además, el incremento de la población genera un incremento de cultivos para alimentación lo cual a su vez genera un crecimiento en el uso de herbicidas o químicos para maximizar la cosecha. Estos químicos usados terminan en el agua subterránea y superficial.\\
 
-Las técnicas de remoción de herbicidas del agua son de mucho interés, mucha investigación existe en este campo como por ejemplo:
-
-\begin{itemize}
-    \item Remoción del herbicida 2,4D usando chitosan, polisacárido no tóxico y biodegradable con excelentes resultados\cite{Nunes2019}.
-    \item Remoción de terbutizalina usando carbón activado mediante carbonización hidrotermal con buenos resultados\cite{tasca2019}.
-    \item Remoción de varios herbicidas usando hongos de tierras contaminadas con herbicidas\cite{Bordjiba2001}.
-\end{itemize}
-
-Los nanotubos de carbono son estructuras tubulares provenientes de láminas de grafeno. Poseen una geometría característica y propiedades semiconductoras así como conductoras dependiendo de su geometría. Esto las ha hecho un objeto de estudio muy recurrente.
-
-En los últimos años se ha estudiado mucho sobre las posibles aplicaciones de los nanotubos de carbono en muchas áreas de interés:
+Y es por eso que la ciencia ha desarrollado soluciones, investigando múltiples métodos de remoción de estos contaminantes emergentes, en lo particular, en la remoción del herbicida 2,4-D estudiado en este texto. A continuación se presentan dos ejemplos.
 
 \begin{itemize}
-    \item Por sus propiedades semiconductoras se creó un microprocesador de 32 bits usando nanotubos de carbono por primera vez \cite{Hills2019}.
-    \item Membranas de nanotubos de carbono como candidatos para filtrar agua \cite{IHSANULLAH2019307}.
-    \item En el area de la medicina se ha planteado su uso como nanocápsulas transportadoras de medicamentos \cite{hilder2008}.
+    \item Experimento de remoción del herbicida 2,4D (Ácido 2,4-diclorofenoxiacético) usando chitosan, polisacárido no tóxico y biodegradable \cite{Nunes2019}.
+    \item Experimento de remoción del herbicida 2,4D usando nanotubos de carbono de pared simple (6,5) \cite{rocha2017}.
 \end{itemize}
 
-Algunas de estas aplicaciones son perfectas para hacer uso de la simulación molecular por la complejidad que representan estos sistemas. Se han conducido múltiples simulaciones de nanotubos de carbono en la actualidad sobre estas aplicaciones pero por ser un material moderno no se han conducido simulaciones para muchos otros sistemas en los que podría aplicarse. Tal es el caso de la simulación de remoción de herbicidas en el agua usando nanotubos de carbono. En esta tesis se presentan simulaciones de dinámica molecular de un sistema nanotubo de carbono + agua + herbicida 2,4D para verificar la posible remoción de este herbicida usando nanotubos de carbono ya planteado en un artículo \cite{rocha2017}.
+En el caso del segundo experimento es un sistema que puede ser mas explorado, en este trabajo ampliamos la investigación de \cite{rocha2017} al conducir una simulación computacional para demostrar la adsorción de 2,4-D en el nanotubo de carbono, así como medir propiedades estructurales del sistema y modelar el experimento.\\
+
+La principal nanoestructura usado en este texto son los nanotubos de carbono de pared simple, los cuales son nanoestructuras de carbono. Estos son ampliamente usadas en muchas áreas de la investigación como en ciencias de materiales, nanotecnología, entre otros \cite{KAUR2019}\cite{SARKAR2018}. \\
+
+En los capítulos 1, 2 y 3 se describe el marco teórico, el capítulo 4 se detalla la metodología y en el capítulo 5 y 6 se presentan los resultados y la conclusión respectivamente.
+
+% El saneamiento del agua es un problema que incrementa junto con la población: en 2019 se usó alrededor de 2900$km^3$ de agua para agricultura \cite{un2020} a partir de esto, nuevos métodos y filosofías al respecto han derivado en múltiples innovaciones para atacar el problema como los siguientes: prevención de la contaminación de ríos; plantas de tratamiento de agua de bajo costo y demás.\\ 
+
+% El incremento de la población provoca un incremento de cultivos para alimentación lo cual a su vez genera un crecimiento en el uso de herbicidas o químicos para maximizar la cosecha. Estos químicos usados terminan en el agua subterránea y superficial. En particular, en el río La Laja en Guanajuato se midió en el 2019 con una concentración máxima de 11.309 $\mu g / g$ en suelo y $\mu g / L$ en agua el herbicida 2,4D\cite{ineec2019}.\\
+
+% Las técnicas de remoción de herbicidas del agua son de mucho interés, mucha investigación existe en este campo como por ejemplo:
+
+% \begin{itemize}
+%     \item Remoción del herbicida 2,4D usando chitosan, polisacárido no tóxico y biodegradable con excelentes resultados\cite{Nunes2019}.
+%     \item Remoción de terbutizalina usando carbón activado mediante carbonización hidrotermal con buenos resultados\cite{tasca2019}.
+%     \item Remoción de varios herbicidas usando hongos de tierras contaminadas con herbicidas\cite{Bordjiba2001}.
+% \end{itemize}
+
+% Los nanotubos de carbono son estructuras tubulares provenientes de láminas de grafeno. Poseen una geometría característica y propiedades semiconductoras así como conductoras dependiendo de su geometría. Esto las ha hecho un objeto de estudio muy recurrente.
+
+% En los últimos años se ha estudiado mucho sobre las posibles aplicaciones de los nanotubos de carbono en muchas áreas de interés:
+
+% \begin{itemize}
+%     \item Por sus propiedades semiconductoras se creó un microprocesador de 32 bits usando nanotubos de carbono por primera vez \cite{Hills2019}.
+%     \item Membranas de nanotubos de carbono como candidatos para filtrar agua \cite{IHSANULLAH2019307}.
+%     \item En el area de la medicina se ha planteado su uso como nanocápsulas transportadoras de medicamentos \cite{hilder2008}.
+% \end{itemize}
+
+% Algunas de estas aplicaciones son perfectas para hacer uso de la simulación molecular por la complejidad que representan estos sistemas. Se han conducido múltiples simulaciones de nanotubos de carbono en la actualidad sobre estas aplicaciones pero por ser un material moderno no se han conducido simulaciones para muchos otros sistemas en los que podría aplicarse. Tal es el caso de la simulación de remoción de herbicidas en el agua usando nanotubos de carbono. En esta tesis se presentan simulaciones de dinámica molecular de un sistema nanotubo de carbono + agua + herbicida 2,4D para verificar la posible remoción de este herbicida usando nanotubos de carbono ya planteado en un artículo \cite{rocha2017}.
+
+
+
