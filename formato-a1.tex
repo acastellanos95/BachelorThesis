@@ -1,46 +1,46 @@
-\chapter{Apéndice A}\label{chapter:apendicea}
+\chapter{Modelo del sistema solvatado}\label{chapter:apendicea}
 
 \textcolor{red}{Encabezados de tablas}
 
-\section{Parámetros de los modelos}
+% \section{Parámetros de los modelos}
 
-\subsection{Modelo de agua}
+% \subsection{Modelo de agua}
 
-El modelo de agua elegido para estas simulaciones fue el modelo SPC/E(punto simple punto de carga extendido) rígido, tiene cargas situadas en los tres átomos y la interacción Lennard-Jones con otras moléculas esta situada en el oxígeno. La figura (\ref{fig:SPCE}) es una visualización de la molécula y la tabla (\ref{SPCEpar}) son los parámetros del modelo.
+% El modelo de agua elegido para estas simulaciones fue el modelo SPC/E(punto simple punto de carga extendido) rígido, tiene cargas situadas en los tres átomos y la interacción Lennard-Jones con otras moléculas esta situada en el oxígeno. La figura (\ref{fig:SPCE}) es una visualización de la molécula y la tabla (\ref{SPCEpar}) son los parámetros del modelo.
 
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=.9\textwidth,keepaspectratio=true]{SPCE.png}
-    \caption{Molécula de agua}
-    \label{fig:SPCE}
-\end{figure}
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=.9\textwidth,keepaspectratio=true]{SPCE.png}
+%     \caption{Molécula de agua}
+%     \label{fig:SPCE}
+% \end{figure}
 
-\begin{table}[h!]
-    \centering
+% \begin{table}[h!]
+%     \centering
 
-    \begin{tabular}{ |p{1cm}|p{4cm}|  }
-    \hline
-    $\sigma$  & 3.166 \AA \\
-    $\epsilon$& 0.650 KJ $mol^{-1}$ \\
-    $r_{OH}$  & 1.000 \AA \\
-    $\angle_{HOH}$&109.47 deg \\
-    $q_{O}$   & -0.8476 e \\
-    $q_{H}$   & 0.4238 e \\
-    \hline
-    \end{tabular}
-    \caption{Parámetros del modelo SPCE}
-    \label{SPCEpar}
-\end{table}
+%     \begin{tabular}{ |p{1cm}|p{4cm}|  }
+%     \hline
+%     $\sigma$  & 3.166 \AA \\
+%     $\epsilon$& 0.650 KJ $mol^{-1}$ \\
+%     $r_{OH}$  & 1.000 \AA \\
+%     $\angle_{HOH}$&109.47 deg \\
+%     $q_{O}$   & -0.8476 e \\
+%     $q_{H}$   & 0.4238 e \\
+%     \hline
+%     \end{tabular}
+%     \caption{Parámetros del modelo SPCE}
+%     \label{SPCEpar}
+% \end{table}
 
-\newpage
-
-\subsection{Modelo del sistema solvatado}
+% \newpage
 
 El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. La siguientes tablas contienen los parámetros de simulación.
 
 \begin{table}[!h]
     \centering
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|l|c|l|c|}
+    \hline
+    Parámetro & valor & Parámeto & valor \\
     \hline
     $\epsilon_{cc}$ & 0.4058kJ/mol & $q_{o}$   & -0.8476e \\
     $\epsilon_{oo}$ & 0.6502kJ/mol &  $q_H$    & 0.4238e \\
@@ -52,7 +52,7 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
     $\theta_{HOH}$  & $109.47^{\circ}$ & $\phi_s$         & $180^{\circ}$ \\
     \hline
     \end{tabular}
-    \caption{Parámetros del agua rígida y el nanotubo de carbono. \cite{meng2008}}
+    \caption{Parámetros del modelo SPCE de agua y del nanotubo de carbono. \cite{meng2008}}
     \label{tab:cnth2oparameters}
 \end{table}
 
@@ -62,6 +62,8 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
     \caption{Molécula 2,4-D}
     \label{fig:24Dfigure}
 \end{figure}
+
+\newpage
 
 % \begin{table}[!h]
 % \caption{\label{tab:cnth2oparameters}
@@ -226,6 +228,8 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
     \centering
     \begin{tabular}{|c|c|}
     \hline
+    \large{$q_{\text{molécula}}$} & q(e) \\
+    \hline
     \large{$q_{CL}$} & -0.070 e \\
     \large{$q_{CL1}$} & -0.095 e \\
     \large{$q_{C1}$} & 0.491 e \\
@@ -256,28 +260,31 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
     \centering
     \begin{tabular}{|c|c|}
     \hline
-    $K^b_{C1-C2} b_{C1-C2}$   & 8.5400X$10^6$ $\frac{kJ}{molnm^4}$ 1.400 \AA\\
-    $K^b_{C2-C3} b_{C2-C3}$   & 8.6600X$10^6$ $\frac{kJ}{molnm^4}$ 1.390 \AA\\
-    $K^b_{C3-C4} b_{C3-C4}$   & 8.6600X$10^6$ $\frac{kJ}{molnm^4}$ 1.390 \AA\\
-    $K^b_{C4-C5} b_{C4-C5}$   & 8.6600X$10^6$ $\frac{kJ}{molnm^4}$ 1.390 \AA\\
-    $K^b_{C5-C6} b_{C5-C6}$   & 8.6600X$10^6$ $\frac{kJ}{molnm^4}$ 1.390 \AA\\
-    $K^b_{C7-C8} b_{C7-C8}$   & 7.1500X$10^6$ $\frac{kJ}{molnm^4}$ 1.530 \AA\\
-    $K^b_{C1-C6} b_{C1-C6}$   & 8.6600X$10^6$ $\frac{kJ}{molnm^4}$ 1.390 \AA\\
-    $K^b_{CL1-C4} b_{CL1-C4}$ & 1.4366X$10^6$ $\frac{kJ}{molnm^4}$ 1.760 \AA\\
-    $K^b_{C2-CL} b_{C2-CL}$   & 1.4366X$10^6$ $\frac{kJ}{molnm^4}$ 1.760 \AA\\
-    $K^b_{C5-H3} b_{C5-H3}$   & 1.2300X$10^7$ $\frac{kJ}{molnm^4}$ 1.090 \AA\\
-    $K^b_{C6-H4} b_{C6-H4}$   & 1.2300X$10^7$ $\frac{kJ}{molnm^4}$ 1.090 \AA\\
-    $K^b_{C3-H2} b_{C3-H2}$   & 1.2300X$10^7$ $\frac{kJ}{molnm^4}$ 1.090 \AA\\
-    $K^b_{C1-O3} b_{C1-O3}$   & 1.1000X$10^7$ $\frac{kJ}{molnm^4}$ 1.380 \AA\\
-    $K^b_{O3-C7} b_{O3-C7}$   & 8.1800X$10^6$ $\frac{kJ}{molnm^4}$ 1.430 \AA\\
-    $K^b_{H5-C7} b_{H5-C7}$   & 1.2300X$10^7$ $\frac{kJ}{molnm^4}$ 1.090 \AA\\
-    $K^b_{H6-C7} b_{H6-C7}$   & 1.2300X$10^7$ $\frac{kJ}{molnm^4}$ 1.090 \AA\\
-    $K^b_{O2-C8} b_{O2-C8}$   & 1.2977X$10^7$ $\frac{kJ}{molnm^4}$ 1.210 \AA\\
-    $K^b_{O-C8}  b_{O1-C8}$   & 1.0300X$10^7$ $\frac{kJ}{molnm^4}$ 1.210 \AA\\
-    $K^b_{O1-H1} b_{O1-H1}$   & 9.8314X$10^6$ $\frac{kJ}{molnm^4}$ 0.983 \AA\\
+    $K^b_{ij}$ $b_{ij}$   & ($\frac{kJ}{molnm^4}$) (\AA)\\
+    % \multicolumn{2}{|c|}{$K^b_{ij}$ ($\frac{kJ}{molnm^4}$) $b_{ij}$ (\AA)}\\
+    \hline
+    $K^b_{C1-C2}\ b_{C1-C2}$   & 8.5400X$10^6$ 1.400\\
+    $K^b_{C2-C3}\ b_{C2-C3}$   & 8.6600X$10^6$ 1.390\\
+    $K^b_{C3-C4}\ b_{C3-C4}$   & 8.6600X$10^6$ 1.390\\
+    $K^b_{C4-C5}\ b_{C4-C5}$   & 8.6600X$10^6$ 1.390\\
+    $K^b_{C5-C6}\ b_{C5-C6}$   & 8.6600X$10^6$ 1.390\\
+    $K^b_{C7-C8}\ b_{C7-C8}$   & 7.1500X$10^6$ 1.530\\
+    $K^b_{C1-C6}\ b_{C1-C6}$   & 8.6600X$10^6$ 1.390\\
+    $K^b_{CL1-C4}\ b_{CL1-C4}$ & 1.4366X$10^6$ 1.760\\
+    $K^b_{C2-CL}\ b_{C2-CL}$   & 1.4366X$10^6$ 1.760\\
+    $K^b_{C5-H3}\ b_{C5-H3}$   & 1.2300X$10^7$ 1.090\\
+    $K^b_{C6-H4}\ b_{C6-H4}$   & 1.2300X$10^7$ 1.090\\
+    $K^b_{C3-H2}\ b_{C3-H2}$   & 1.2300X$10^7$ 1.090\\
+    $K^b_{C1-O3}\ b_{C1-O3}$   & 1.1000X$10^7$ 1.380\\
+    $K^b_{O3-C7}\ b_{O3-C7}$   & 8.1800X$10^6$ 1.430\\
+    $K^b_{H5-C7}\ b_{H5-C7}$   & 1.2300X$10^7$ 1.090\\
+    $K^b_{H6-C7}\ b_{H6-C7}$   & 1.2300X$10^7$ 1.090\\
+    $K^b_{O2-C8}\ b_{O2-C8}$   & 1.2977X$10^7$ 1.210\\
+    $K^b_{O-C8} \ b_{O1-C8}$   & 1.0300X$10^7$ 1.210\\
+    $K^b_{O1-H1}\ b_{O1-H1}$   & 9.8314X$10^6$ 0.983\\
     \hline
     \end{tabular}
-    \caption{Tabla de parametros de enlace de 2,4-D}
+    \caption{Tabla de parámetros del potencial de enlace de 2,4-D}
     \label{tab:enlace24D}
 \end{table}
 
@@ -287,41 +294,43 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
     \centering
     \begin{tabular}{|c|c|}
     \hline
-    $K^{\theta}_{C3-C4-CL1} \theta^0_{C3-C4-CL1}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C4-C5-CL1} \theta^0_{C4-C5-CL1}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C3-C4-C5} \theta^0_{C3-C4-C5}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C2-C3-C4} \theta^0_{C2-C3-C4}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C2-C3-CL} \theta^0_{C2-C3-CL}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C1-C2-C3} \theta^0_{C1-C2-C3}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C1-C2-CL} \theta^0_{C1-C2-CL}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C1-C2-C6} \theta^0_{C1-C2-C6}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C1-C6-O3} \theta^0_{C1-C6-O3}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C1-C6-C5} \theta^0_{C1-C6-C5}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C4-C5-C6} \theta^0_{C4-C5-C6}$& 560 $\frac{kJ}{mol}$ $120^{\circ}$\\
+    $K^{\theta}_{ijk}$ $\theta^0_{ijk}$& $\frac{kJ}{mol}$\quad $^{\circ}$\\
+    \hline
+    $K^{\theta}_{C3-C4-CL1} \theta^0_{C3-C4-CL1}$& 560 120\\
+    $K^{\theta}_{C4-C5-CL1} \theta^0_{C4-C5-CL1}$& 560 120\\
+    $K^{\theta}_{C3-C4-C5} \theta^0_{C3-C4-C5}$& 560 120\\
+    $K^{\theta}_{C2-C3-C4} \theta^0_{C2-C3-C4}$& 560 120\\
+    $K^{\theta}_{C2-C3-CL} \theta^0_{C2-C3-CL}$& 560 120\\
+    $K^{\theta}_{C1-C2-C3} \theta^0_{C1-C2-C3}$& 560 120\\
+    $K^{\theta}_{C1-C2-CL} \theta^0_{C1-C2-CL}$& 560 120\\
+    $K^{\theta}_{C1-C2-C6} \theta^0_{C1-C2-C6}$& 560 120\\
+    $K^{\theta}_{C1-C6-O3} \theta^0_{C1-C6-O3}$& 560 120\\
+    $K^{\theta}_{C1-C6-C5} \theta^0_{C1-C6-C5}$& 560 120\\
+    $K^{\theta}_{C4-C5-C6} \theta^0_{C4-C5-C6}$& 560 120\\
 
-    $K^{\theta}_{C3-C4-H2} \theta^0_{C3-C4-H2}$& 505 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C2-C3-H2} \theta^0_{C2-C3-H2}$& 505 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C1-C6-H4} \theta^0_{C1-C6-H4}$& 505 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C5-C6-H4} \theta^0_{C5-C6-H4}$& 505 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C4-C5-H3} \theta^0_{C4-C5-H3}$& 505 $\frac{kJ}{mol}$ $120^{\circ}$\\
-    $K^{\theta}_{C5-C6-H3} \theta^0_{C5-C6-H3}$& 505 $\frac{kJ}{mol}$ $120^{\circ}$\\
+    $K^{\theta}_{C3-C4-H2} \theta^0_{C3-C4-H2}$& 505 120\\
+    $K^{\theta}_{C2-C3-H2} \theta^0_{C2-C3-H2}$& 505 120\\
+    $K^{\theta}_{C1-C6-H4} \theta^0_{C1-C6-H4}$& 505 120\\
+    $K^{\theta}_{C5-C6-H4} \theta^0_{C5-C6-H4}$& 505 120\\
+    $K^{\theta}_{C4-C5-H3} \theta^0_{C4-C5-H3}$& 505 120\\
+    $K^{\theta}_{C5-C6-H3} \theta^0_{C5-C6-H3}$& 505 120\\
     
-    $K^{\theta}_{C7-C8-H5} \theta^0_{C7-C8-H5}$& 450 $\frac{kJ}{mol}$ $109.60^{\circ}$\\
-    $K^{\theta}_{C7-C8-H6} \theta^0_{C7-C8-H6}$& 450 $\frac{kJ}{mol}$ $109.60^{\circ}$\\
-    $K^{\theta}_{C8-O1-H1} \theta^0_{C8-O1-H1}$& 450 $\frac{kJ}{mol}$ $109.50^{\circ}$\\
-    $K^{\theta}_{C7-C8-O1} \theta^0_{C7-C8-O1}$& 520 $\frac{kJ}{mol}$ $109.50^{\circ}$\\
+    $K^{\theta}_{C7-C8-H5} \theta^0_{C7-C8-H5}$& 450 109.60\\
+    $K^{\theta}_{C7-C8-H6} \theta^0_{C7-C8-H6}$& 450 109.60\\
+    $K^{\theta}_{C8-O1-H1} \theta^0_{C8-O1-H1}$& 450 109.50\\
+    $K^{\theta}_{C7-C8-O1} \theta^0_{C7-C8-O1}$& 520 109.50\\
     
-    $K^{\theta}_{C7-H5-H6} \theta^0_{C7-H5-H6}$& 484 $\frac{kJ}{mol}$ $107.57^{\circ}$\\
-    $K^{\theta}_{O3-C7-H5} \theta^0_{O3-C7-H5}$& 503 $\frac{kJ}{mol}$ $106.75^{\circ}$\\
-    $K^{\theta}_{O3-C7-H6} \theta^0_{O3-C7-H6}$& 503 $\frac{kJ}{mol}$ $106.75^{\circ}$\\
-    $K^{\theta}_{O3-C7-C8} \theta^0_{O3-C7-C8}$& 530 $\frac{kJ}{mol}$ $111^{\circ}$\\
-    $K^{\theta}_{C7-C8-O2} \theta^0_{C7-C8-O2}$& 640 $\frac{kJ}{mol}$ $126^{\circ}$\\
-    $K^{\theta}_{C1-C2-O3} \theta^0_{C1-C2-O3}$& 685 $\frac{kJ}{mol}$ $121^{\circ}$\\
-    $K^{\theta}_{C8-O2-O1} \theta^0_{C8-O2-O1}$& 730 $\frac{kJ}{mol}$ $124^{\circ}$\\
-    $K^{\theta}_{C1-C7-O3} \theta^0_{C1-C7-O3}$& 2211.40 $\frac{kJ}{mol}$ $119^{\circ}$\\
+    $K^{\theta}_{C7-H5-H6} \theta^0_{C7-H5-H6}$& 484 107.57\\
+    $K^{\theta}_{O3-C7-H5} \theta^0_{O3-C7-H5}$& 503 106.75\\
+    $K^{\theta}_{O3-C7-H6} \theta^0_{O3-C7-H6}$& 503 106.75\\
+    $K^{\theta}_{O3-C7-C8} \theta^0_{O3-C7-C8}$& 530 111\\
+    $K^{\theta}_{C7-C8-O2} \theta^0_{C7-C8-O2}$& 640 126\\
+    $K^{\theta}_{C1-C2-O3} \theta^0_{C1-C2-O3}$& 685 121\\
+    $K^{\theta}_{C8-O2-O1} \theta^0_{C8-O2-O1}$& 730 124\\
+    $K^{\theta}_{C1-C7-O3} \theta^0_{C1-C7-O3}$& 2211.40 119\\
     \hline
     \end{tabular}
-    \caption{Tabla de parametros de angulos de 2,4-D}
+    \caption{Tabla de parametros de ángulos de 2,4-D}
     \label{tab:angulos24D}
 \end{table}
 
@@ -329,29 +338,35 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
     \centering
     \begin{tabular}{|c|c|}
     \hline
-    $k^{\xi}_{C1-C2-C6-O3}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    $k^{\xi}_{C1-C2-C3-CL}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    $k^{\xi}_{C2-C3-C4-H2}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    $k^{\xi}_{C3-C4-C5-CL1}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    $k^{\xi}_{C4-C5-C6-H3}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    $k^{\xi}_{C1-C5-C6-H4}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    $k^{\xi}_{C7-C8-O1-O2}$ $\xi_{0}$ & 167.36 $\frac{kJ}{molrad^2}$ $0^{\circ}$ \\
-    
-    $k^{\phi}_{C1-C2-C3-C4}$ $\phi_s$ & 41.80 $\frac{kJ}{mol}$ $180^{\circ}$\\
-    $k^{\phi}_{C3-C4-C5-C6}$ $\phi_s$ & 41.80 $\frac{kJ}{mol}$ $180^{\circ}$\\
-    $k^{\phi}_{C1-C2-C3-C6}$ $\phi_s$ & 41.80 $\frac{kJ}{mol}$ $180^{\circ}$\\
-    $k^{\phi}_{C1-C2-C5-C6}$ $\phi_s$ & 41.80 $\frac{kJ}{mol}$ $180^{\circ}$\\
-    $k^{\phi}_{C1-C4-C5-C6}$ $\phi_s$ & 41.80 $\frac{kJ}{mol}$ $180^{\circ}$\\
-    $k^{\phi}_{C2-C3-C4-C5}$ $\phi_s$ & 41.80 $\frac{kJ}{mol}$ $180^{\circ}$\\
-    $k^{\phi}_{C7-C8-O1-O3}$ $\phi_s$ n & 1.00 $\frac{kJ}{mol}$ $180^{\circ}$ 6\\
-    $k^{\phi}_{C8-O1-O2-H1}$ $\phi_s$ n & 7.11 $\frac{kJ}{mol}$ $180^{\circ}$ 2\\
-    $k^{\phi}_{C1-C2-O3-C7}$ $\phi_s$ n & 0.42 $\frac{kJ}{mol}$ $0^{\circ}$ 2\\
-    $k^{\phi}_{C1-C7-C8-O3}$ $\phi_s$ n & 1.26 $\frac{kJ}{mol}$ $0^{\circ}$ 3\\
+    $k^{\xi}_{ijkl}$ $\xi^{0}_{ijkl}$ & $\frac{kJ}{molrad^2}$\quad $^{\circ}$ \\
+    \hline
+    $k^{\xi}_{C1-C2-C6-O3}$ $\xi_{0}$ & 167.36 0\\
+    $k^{\xi}_{C1-C2-C3-CL}$ $\xi_{0}$ & 167.36 0\\
+    $k^{\xi}_{C2-C3-C4-H2}$ $\xi_{0}$ & 167.36 0\\
+    $k^{\xi}_{C3-C4-C5-CL1}$ $\xi_{0}$ & 167.36 0 \\
+    $k^{\xi}_{C4-C5-C6-H3}$ $\xi_{0}$ & 167.36 0\\
+    $k^{\xi}_{C1-C5-C6-H4}$ $\xi_{0}$ & 167.36 0\\
+    $k^{\xi}_{C7-C8-O1-O2}$ $\xi_{0}$ & 167.36 0\\
+    \hline
+    $k^{\phi}_{ijkl}$ $\phi^s_{ijkl}$ & $\frac{kJ}{mol}$\quad $^{\circ}$\\
+    \hline
+    $k^{\phi}_{C1-C2-C3-C4}$ $\phi_s$ & 41.80 180\\
+    $k^{\phi}_{C3-C4-C5-C6}$ $\phi_s$ & 41.80 180\\
+    $k^{\phi}_{C1-C2-C3-C6}$ $\phi_s$ & 41.80 180\\
+    $k^{\phi}_{C1-C2-C5-C6}$ $\phi_s$ & 41.80 180\\
+    $k^{\phi}_{C1-C4-C5-C6}$ $\phi_s$ & 41.80 180\\
+    $k^{\phi}_{C2-C3-C4-C5}$ $\phi_s$ & 41.80 180\\
+    $k^{\phi}_{C7-C8-O1-O3}$ $\phi_s$ n & 1.00 180 6\\
+    $k^{\phi}_{C8-O1-O2-H1}$ $\phi_s$ n & 7.11 180 2\\
+    $k^{\phi}_{C1-C2-O3-C7}$ $\phi_s$ n & 0.42 0 2\\
+    $k^{\phi}_{C1-C7-C8-O3}$ $\phi_s$ n & 1.26 0 3\\
     \hline
     \end{tabular}
-    \caption{Tabla de parametros de angulos dihedros de 2,4-D}
+    \caption{Tabla de parámetros del potencial de ángulos diedros de 2,4-D}
     \label{tab:angulosdih24D}
 \end{table}
+
+\newpage
 %               c6              c12                sigma                 epsilon
 % C    CLAro      1  0.003974417     6.381584e-06       0.3421967204782815    0.6188115086273643
 % C     CAro      1  0.002340624     4.690642e-06      sigma: 0.3550722828524636, epsilon: 0.29199205084165447
@@ -405,11 +420,13 @@ El sistema se compone de un nanotubo de carbono (6,5) y 10 moléculas de 2,4D. L
 % OW     HS14     1  0               0
 % HS14     HS14   1  8.464e-05       1.5129e-08     sigma: 0.23734081428097492, epsilon: 0.1183807521977659
 
-La siguiente tabla muestran los parámetros Lennard-jones para 2,4-D con el nanotubo del carbono, con agua y consigo misma. La lista (\ref{tab:24Ditp}) es el tipo de átomo dentro de GROMACS para cada átomo de 2,4-D en la figura (\ref{fig:24Dfigure}) descrito en el archivo itp.
+La tabla \ref{tab:lennardjonesall} muestran los parámetros Lennard-Jones para 2,4-D con el nanotubo del carbono, con agua y consigo misma. La lista \ref{tab:24Ditp} es el tipo de átomo dentro de GROMACS para cada átomo de 2,4-D en la figura \ref{fig:24Dfigure} descrito en el archivo itp.
 
 \begin{table}[!h]
     \centering
     \begin{tabular}{|c|c|}
+    \hline
+    tipo & átomo\\
     \hline
    CLAro & CL1\\
     CAro &  C4\\
@@ -432,7 +449,7 @@ La siguiente tabla muestran los parámetros Lennard-jones para 2,4-D con el nano
     HS14 &  H1\\
     \hline
     \end{tabular}
-    \caption{lista de átomos en el archivo .itp}
+    \caption{Lista de átomos en el archivo .itp de 2,4-D}
     \label{tab:24Ditp}
 \end{table}
 
@@ -488,6 +505,6 @@ La siguiente tabla muestran los parámetros Lennard-jones para 2,4-D con el nano
         HS14     HS14   &     0.23734081428097492 0.1183807521977659\\
         \hline
     \end{tabular}
-    \caption{Tabla de parametros de Lennard-Jones de 2,4-D}
-    \label{tab:my_label}
+    \caption{Tabla de parámetros del potencial de Lennard-Jones de 2,4-D}
+    \label{tab:lennardjonesall}
 \end{table}

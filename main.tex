@@ -18,6 +18,8 @@
 \usepackage[T1]{fontenc}		   %%% fonts y unicode UTF8
 \usepackage[utf8]{inputenc}  
 \usepackage[spanish]{babel}
+\usepackage{multirow}
+\usepackage{comment}
 % \usepackage[fixlanguage]{babelbib}
 % \usepackage[backend=bibtex,style=numeric]{biblatex}
 \usepackage[backend=biber,style=draft]{biblatex}
@@ -27,8 +29,10 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage{csquotes}
+\usepackage{subcaption}
 % \usepackage{url}
 \addbibresource{tesis.bib}
+\newlength{\imagewidth}
 
 
 % Cualquier paquete necesario debe ser incluido aquí.
@@ -79,7 +83,7 @@
 \include{conclusion}
 
 \appendix % A partir de esta línea van los apéndices. Quitar si no habrá apéndices
-\include{formato-a1}
+\input{formato-a1}
 
 \backmatter  % En esta línea está terminado el trabajo. No quitar
 \addcontentsline{toc}{chapter}{Bibliografía} % Agregar Bibliografía al índice
