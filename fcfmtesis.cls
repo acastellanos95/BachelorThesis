@@ -251,7 +251,7 @@
             
             \@vocalb
             
-            Vocal
+            Suplente
        		
        		\vspace{1.2cm}%
        		\rule{5cm}{1pt}%
